@@ -1,2 +1,2 @@
 # MFF-UK-notes
-Notes from some lectures on MFF UK. Most of them is written in Czech language.
+Notes from some of the lectures taken during my studies of informatics on MFF UK. Most of them are written in Czech.
