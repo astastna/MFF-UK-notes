@@ -1,0 +1,160 @@
+Autentizace
+- pomocí
+	- informace - šifrovací klíč
+	- tokenu - klíč, schopnost, znalost -> něco, co člověk má
+	- biometriky
+	- schopnosti provést operaci
+
+Hesla
+- pokud má heslo hodně různých typů znaků, není možné jej napsat na cizí klávesnici
+- jsou špatně zapamatovatelná
+- musí být nepravděpodobné
+- potřebuji jich hodně a není dobré mít stejné heslo k více autentizacím
+- často obměňované
+	-> zaručený způsob, jak se nikam nepřihlásit
+	-> typicky známé slovo s přiloženými divnými znaky
+	=> skončí to tím, že jsou hesla napsaná
+- výsledkem je, že hesla jsou z omezeného podprostoru
+	-> fungují slovníkové útoky
+
+Historka s faxem
+- nejde poslat fax, volal zákazník
+- vytisknul "Please insert paper into the document feeder."
+
+- Cesnet si udělal průzkum - 40% hesel prolomili, u administrátorů 60%
+- heslo je slabá autentizace
+
+Passphrase
+- použiji nějaký citát, říkanku, dostatečně dlouhé
+- dá se na tom dělat statistika o tom, jak daný člověk píše, jak rychle, jaký ritmus
+
+Skupinová hesla 
+- heslo společné pro skupinu uživatelů
+- většinou je vyzrazeno
+- volám - jak se připojím
+	- jméno 
+	- heslo zadejte xxx ...
+- lidi ztrácí pocit zodpovědnosti
+
+PINy
+- číselné řetězce standardní délky
+
+Jednorázová hesla
+- dříve např. knihy
+- v současnosti např. přívěšek, flashka, ...
+- heslo se používá jednou, generuje se každou minutu
+- není ani potřeba přesné hodiny, postupně se dá synchronizovat, o kolik je dané zařízení mimo
+	-> považuje se za bezpečný způsob přihlašování 
+	- dá se použít i když někdo kouká přes rameno
+- není potřeba mít jen kartu, musí na ní být i správné heslo
+	- vždy se něco vygeneruje, nedá se tipovat
+	- je na příjemci něco dělat s tím, že se pokouší přistoupit špatným kódem
+
+Challenge-Response systémy
+- systém se na něco zeptá / něco pošle
+- často se ptají na stejné věci pořád dokola
+- nebo na n-tý znak nějakého tajného slova
+	-> vede opět k napsání a veřejné ukazování daného slova
+- dá se implementovat i dobře - např. zašifrování tajným klíčem
+
+Vícefaktorová autentizace
+- kombinace výše zmíněných přístupů
+- buď čistě více autentizací
+- nebo prvním mechanismem aktivuji druhý a dívám se jen na výsledek druhého
+- časté chyby:
+	- nejdříve silnější mechanismus a poté slabší, dívám se jen na slabší
+	- zadám svůj certifikát a cizí jméno a heslo a přihlásím se -> chyba
+		- chybnou implementací se efekt vynuluje
+- špatně to je provedeno opravdu často, proto ne moc bezpečné
+
+Výměna tajnosti
+- buď pomocí tajného klíče
+- nebo přes autoritu
+	- kontaktuji autoritu, ta mi vydá transakční klíč a šifrovanou zprávu pro B
+	- pošlu B zprávu obsahující výše zmíněné
+
+Asymetrické klíče
+- potřeba ověřit, že veřejný klíč je ověřený autoritou
+- 
+
+- neplést transformaci tajným klíčem a podpis
+	- klíče jsou jinak udělané a spravované
+	- spíš autentizační operace
+
+Tokeny, smart cards
+- historicky
+	- čárové kódy, karty s magnetickým páskem - pořád v bankách
+
+Tokeny pouze s pamětí
+- dokážou ověřit heslo
+
+Tokeny s logikou
+- po zadání něčeho spočítá autentizační věc
+- POST SIGNUM - iKey - paměťová karta s nagenerovaným heslem a certifikátem
+		- klíč po použití zmizí z paměti
+		- musí se znovu zaktivovat
+		- funguje jen za konkrétních okolonotí
+- není ochotné spočítané věci exportovat ani importovat
+
+- mezi challeng-response a smart cards není tak velký rozdíl
+
+Biometriky
+- např. obličej není vždy stejný
+	- neexistuje vzor, jen průměr vzorů
+	- s rostoucím požadavkem na shodu
+		- klesají False Pozitive
+		- stoupají False Negative
+
+- mimo jiné hraje roli i společenská přijatelnost
+- různá míra spolehlivosti a ceny
+- důležitá je kvalita senzorů 
+	- dostatečně mechanicky odolné
+	- odolné i proti různým způsobům podvrhování
+- Mackgiver 
+	- ukázky toho, jak obejít biometriky
+- banky zavádí autentizaci pomocí dlaně
+	- otisk je možné nakopírovat
+- je potřeba, aby to fungovalo i venku
+	- např. přikládání na kovoý předmět v -30°C
+
+Hlas
+- omezení na 3kHz na telefonu
+- při tomto rozsahu jsem schopný člověka poznat
+- jedna z mála biometrik, co se dá dělat na dálku
+- pozor na mp3 a podobně
+	- čtená fráze musí být náhodná
+
+Verifikace dynamiky podpisu
+- jak rychle, v jakém pořadí
+- podepsat se většinou není problém
+- senzory musí být citlivé
+- někteří lidé mají dost velkou variabilitu podpisu
+
+Otisk prstu
+- klasická metoda, často se používá
+- náchylné na podvrhování
+- musí být nějaké prostředky na ověření, že to je opravdu prst
+	- že souvisí se zbytkem držitele
+- mohou být negativní asociace na policejní vyšetřování
+
+Geometrie ruky
+- otisk celé dlaně
+- přirozeně bezpečnější
+- lepší prostor pro napravení pořezání a jiných zranění
+
+Obraz sítnice
+- s dobrými teleobjektivy se dá falšovat
+
+Cíle ochrany objektů
+- kontrolovat každý přístup
+- dát lidem minimální práva pro jejich činnost
+	- i kdyby pro ně byla bezcenná
+- ověření přijatelného používání
+	- možnost kontrolovat, co subjekt provádí
+- omezení rozsahu používání
+	- typicky si lidi o omezení práv neřeknou
+	- když je něco potřeba rychle udělat, často se přidělují práva zbytečně
+- bod stability
+	- všichni mají všechna práva
+	- směřuje k tomu každý systém s právy
+

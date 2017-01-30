@@ -1,0 +1,122 @@
+Bezpečný software
+
+Historka
+- kolega Jirka si udělal obrázek, co je teoreticky možné udělat a pak to sliboval a ukazoval zákazníkovi
+
+- přestože většina programátorů sohlasí se strukturováním, dobře definovaným chováním atp.
+- chyby vznikají typicky tak, že se něco udělá rychle a nejsou finance na to, aby se to dělalo důkladněji
+
+- vzájemná podezřívavost
+	- program nesmí spoléhat na to, že mu další program dá správný vstup
+	- předpokládám, že to ostatní programy dělají špatně, ověřuji
+- omezení
+	- operační systémy proti podezřelým programům
+	- program dostane pouze částečná práva
+- pareclizviace informací
+	- nemít všechna data a programy na jednom místě
+	- od určité úrovně sw je těžké přidávat patche
+		- není jisté, kterých procesů se dotkne a může rozbít
+		- není proveditelné to, že budu zanášet všechny patche
+- přístupové logy
+	- logovat, kdo, kdy a kam přistupoval
+	- není nic horšího, než když selže nějaká služba bez toho, aby vypsal něco o důvodech
+
+Standardy
+- vyplatí se mít popsané standardní postupy - vývojové prostředí, kostra programu, ...
+- standardy jsou dobrá věc - větší zastupitelnost, znovuvyužití kódu
+- v reálu byrokracie, je potřeba se přizpůsobit tomu, jak se to dělá
+- nutné přeškolit lidi, pokud umí s jinou verzí programu
+- standardy konfigurace a testování
+- nezapomínat na princip sepcarace rolí - ideálně někdo jiný vyvíjí, testuje, dělá review, ...
+
+Verifikace a validace sw
+
+
+	požadavky<------
+	    |		|
+	    v		|
+	návrh	      změna
+	    |		|
+	    v		|
+	implementace	|
+	    |		|
+	    v		|
+	integrace	|
+	    |		|
+	    v 		|
+	instalace	|
+	    |		|
+	    v		|
+	provoz----------
+
+- čím později zachytím chybu, tím dražší je ji napravit
+- pozor na past neustálého vylepšování sw nad rámec požadavků klienta
+- pokud je špatně návrh, nejde s tím moc dělat
+- validace - základním kritériem je to, že když to přes ně projde, tak je to v pořádku
+	- z principu musí být nezávislí - vlastní finance, vedení, ...
+
+Testování 
+- back-to-back testing
+	- porováníní výstupu s jiným programem, který má stejnou specifikaci
+- testování orkajových vstupů
+- čtení kódu
+- analýza pokrytí testů
+- kritická analýza
+	- zkoumá, jak se to bude chovat na kritické cestě
+	-> to, co se dělá často, by mělo být rychlé
+- databázová analýza
+	- odpovídá návhru?
+	- dají se běžné dotazy zodpovědět rychle?
+- analýza toku dat
+	- globální zkoumání toho, kde vstupují a kudy procházejí data
+- rozhodovací tabulky
+	- nástroj pro kontrolu logických vzathů a rozhodování
+- desk checking
+	- kontrola na zjevné chyby
+- error seeding 
+	- podsouváním známých chyb do kódu zkoumá, zda navržené testy jsou dobré
+	- říká něco o tom, jak funguje naše testování
+- event tree analysis
+- interpretace jako konečné automaty
+- funkční testování
+	- liší se tím, že bývá reálně používána
+	- spustím a zjišťuju, zda se to opravdu chová tak, jak chci
+- inspekce
+	- četní třetí osobou, cíl odhalit zbytečný balast
+- analýza rozhraní
+- testování rozhraní
+- analýza mutací
+	- testuju testování
+	- vyrobám si upravené varianty téhož probramu a testuji je
+- testování výkonu
+- petriho sítě
+	- nástroj jak modelovat vniřní logiku software
+- důkaza korektnosti
+- prototypování
+	- vyzkouším +- funční protyp a zkouším jeho funčnost
+- regresní analýza a testy
+	- znovuvyhodnocení požadavků po změnách
+- procházení požadavků
+	- snažím se zamyslet nad tím, zda program odpovídá požadavkům
+-reviews
+-  sensitivity analysis
+- simulace
+	- v zásadě testování kusů kódu, které ještě nemají hotové ostatní
+- slicing
+	- dekmpozice programů
+- chybový mód, efekty, kritická analýza
+	- pustím na systém uživatele
+- analýza chybových stromů
+	- když nastane nějaká chyba, jak se k ní chová systém?
+- stress testing
+	- snažím se sw dohnat na hranici požadavků a sleduji, co se pokazí
+	- dobrá metoda
+	- mnoho systémů se v této situaci dramaticky změní
+
+- sw má miliony řádků kódu
+	- těžko se nacházejí
+	- pravděodobně se o chybě dozvím tak, že ji někdo zneužije
+
+Operační systém
+- chrání procesor a další zdroje atp.
+- první věc, co řeší nějakou bezpečnost

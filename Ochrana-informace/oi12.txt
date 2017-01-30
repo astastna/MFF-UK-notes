@@ -1,0 +1,141 @@
+Sítě
+- obecně bezpečnostní riziko
+- komunikačních kanálů, které je potřeba si ohlídat, je hrozně moc
+- v mnoha případech přestaly fungovat lokální sítě
+	- je potřeba zabezpečit každou stanici
+	- ale jsou některé pc, které nelze ochránit samostatně
+	- ideálně bychom měli být schopni reagovat v řádu hodin
+		- někdy ale není možné ani v řádu týdnů
+	- často se stává, že jsou naplánované testy a releasy
+		- pokud chci udělat patch, tak nejdřív např. za měsíc
+		- tehdy to ale už nemusí být relevantní
+			- pokud to někdo chtěl zneužít, tak už to dávno udělal
+
+Demilitarizované zóny - DMZ
+	internet	|	prostředí	|	GUI	|	databáze + aplikační nástavba
+- "|" jsou firewally
+- omezuji přístup - např. jednostranné přístupy
+- historka:
+- zákazník měl řetězec dlouhý 6
+- na komunikačních rozhraních (5) pomalu začaly docházet protokoly
+- poslední článek měl jiný komunikační protokol
+
+- přístup je jen jedním směrem, pomocí jediného protokolu
+	-> omezený počet možností, jak zaútočit
+- když prolomí jedno rozhraní, tak musí prolomit i další a další
+- i kdyby "schodů" bylo 100, nedává to úplnou jistotu
+- čím více, tím silnější
+	- ale zároveň máme menší šanci, že nám to bude fungovat
+- šance, že se sejde v jednu chvíli 5 systémů a ve všech bude bezpečnostní chyba, je poměrně malá
+
+Traffic shaping
+- chrání zejména před lidskou blbostí uživatelů
+- umožňuje zachovat alespoň minimální funkčnost, pokud se stane něco špatného
+
+Autentizace v síti
+- poměrně jednoduchým a efektivním způsobem je zahlcení autentikace
+	- pak si nikdo neškrtne
+	- všichni stojí ve stejné frontě
+- příklad:
+- databáze, ke které přistupují uživatelé
+- zároveň do ní připisuje hromada subjektů
+
+- vyplatí se mít jednotné přihlášení
+
+- http protokol -> cookies
+	- používá se často
+	- původně k autentikaci nebyl vůbec konstruován
+	- o to více se používá
+- tickety
+	- někdo ověří, že je uživatel oprávněn přistupovat
+	- vydá mu ticket
+	- uživatel předává ticket dál
+	- všude se jím přihlašuje
+	- při samotném přistupování zařízení dále neověřují, kdo jim ticket dává
+
+- samotná autentikace (na první server)
+	- systém jednorázových hesel
+	- certifikáty, PKI
+		- ani hezké, ani jednoduché
+		- musím zvážit, kterým certifikačním autoritám věřím
+		- v EU schváleno, že musí být uznávané všechny certifikační autority jimi schválené
+		- podepsané pdf
+
+Vycpávací zátěž
+- pokud někdo komunikuje, generuji i "maskovací" komunikaci
+- útočník pak těžko oddělí šum od skutečné komunikace
+- záleží, co je cílem
+	- můžu např. zakrýt, s kým komunikuji
+	- Tor - generuje se komunikace s mnoha uzly
+		- skutečná komunikace také probíhá mezi mnoha meziuzly
+- funguje, ale je to poměrně drahé
+
+Ochrana komunikace
+- klasicky ipsec, tls, atp. 
+- ne vždy potřebuji zakrýt obsah zpráv
+- třeba chci zakrýt to, s kým komunikuji a kdy
+	-> kontrola routování
+
+Integrita dat
+- všechny prostředky, které mám, integritu kontrolují, nikoli zaručují
+- samotné šifrování není ochranou proti tomu, že někdo zachytí mojí zprávu a pošle ji znovu
+- nebo k ní něco přidá (i když nesmysly)
+- řešením může být přidat timestamp, id, atp.
+	- ale není to čistá kryptografie
+- dá se udělat tak, že mám kontrolní součty, které jsou zašifrované
+- integrita tedy není zaručena tím, že jsou data šifrovaná
+	- i když jsou zašifrovaná správně
+
+Lokální sítě
+- prakticky přestaly existovat
+- ve formě čistě lokální sítě, do které nepřichází nikdo cizí
+	- ani notebooky, flashky, atp.
+- pořád se ale zachovávají ve smyslu serverových sítí
+	- které se opravdu tak chovají
+- jakmile se začnu cítit bezpečně, tak přestávám být schopný zareagovat na útoky (nebo je rozpoznat)
+	- běžně se autentikuje jednoduchými prostředky
+	- jakmile se tam útočník dostane, tak je to větší problém
+
+Víceúrovňová bezpečnost
+- striktně by měl být pro každou úroveň bezpečnosti/senzitivity odlišný datový tok
+	- tj. n drátů vedených paralelně (ale někdy i jinudy)
+	-> snaha sjednotit alespoń na komunikační vrstvě
+- chceme nebezpečným prostředím protlačit senzitivní data
+- programování síťových rozhraní
+	- daný stupeň senzitivity zašifruje a označí, pošle ven
+	- když něco přijde, odznačí, odšifruje, pošle po separátním kanálu
+
+Bezpečnost komunikace
+- téměř vše je možné odposlouchávat
+	- kabely
+	- optická vlákna
+	- wifi
+	- satelitní komunikace
+-> při komunikaci to může číst téměř vždy
+- pokud nechci, aby to bylo veřejné - musím šifrovat
+- monitorována může být komunikace i poměrně velkého rozsahu
+
+Zkouška:
+- termíny +- doba, kdy běžela přednáška
+- 2 témata
+	- širší témata typu "co víte o ochraně paměti"
+	- plus 3-4 odrážky
+	- ideálně každou otázku na 1A4
+	- případné připomínky jsou vyřknuty poté
+	- občas se na něco pozeptá
+	- cca 6.5 min. na člověka
+	- není omezený čas 
+		- je monžné začít později
+		- 23.40 poslední vlak
+		- až se budeme cítit, že jsme napsali vše, tak si počkáme ve frontě
+- nebude kontrolovat, zda jsou názvy stejné, jako má on v přednášce
+	- půlka stejně vymyšlená
+- přednáška je jedna z mála, kde se člověk neztratí
+	- je ale dobré si to nechat projít hlavou a zamyslet se, proč to je právě takhle
+- klasifikace
+	- pokud mám ke všemu vše a žádnou blbost - 1
+	- pokud něco málo chybí, a má malou blbost - 2
+	- pokud chybí výraznější části, nebo to výrazněji nejde
+	- jestliže jednu odpověď zvládnu za 1, tak nemůžu dostat hůř, než za 3
+	- měření začíná tím, že odevzdám papír 
+		-> když odejdu bez odevzdání, tak se nepočítá jako termín 

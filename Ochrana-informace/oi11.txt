@@ -1,0 +1,162 @@
+Dnes dokončení z minula a sítě, příští týden konec
+Předtermíny: možnost příští týden po přednášce, bude asi kratší
+
+Monitory
+- kontrolují, zda data vkládaná do databáze jsou korektní
+- je problém naprogramovat správně všechna omezení
+
+Senzitivní data
+- když je v adresáři soubor, který nemám právo vidět, neměl bych ani vidět jeho název
+- v databázích naopak snaha mít co nejlepší granularitu
+- výsledky výpočtu mají typicky jinou senzitivitu, než data vstupní
+- dnes primárně o řízení přístupu nad databází
+- data v databázi mohou být označena za senzitivní 
+	- např. z toho důvodu, že se dá poznat, odkud pocházejí a nechci prozrazovat svoje zdroje
+	- nebo se tak rozhodnu - může to být výhodné pro provozovatele
+	- můžu chtít, aby nebylo poznat, jaké dělám modifikace a jaká data schraňuji
+- přestože databáze pracuje se záznamy, může být senzitivní jen některý záznam či jeho část
+	- data můžou být senzitivní až vzhledem k historii daného uživatele (už by dostal moc informací)
+-> netriviální na programování
+- když mám senzitiní atribut/data, neměly by být vidět v dotazech na strukturu databáze, počet záznamů, atp.
+	-> snažím se vyhnout nesrovnalostem mezi tím, co uživatel vidí a co vrací dotazy
+- musí mít svůj způsob zajišťování dostupnosti a zámků, vyhnutí se deadlocků
+- strategie proti deadlockům typicky snižují výkon 
+
+Vyzrazení dat
+- mnoho technik, jak zabránit vyzrazení dat, ke kterým uživatel nemá práva
+	- viz dotazy, které vyzradí něco, co nemám vědět
+- můžu se ptát na intervaly, meze
+	-> s trochou informací o datech můžu zůžit dotaz na jediný záznam nebo získat alespoň výsledek poměrně vše
+- můžu se zeptat na doplněk toho, co mě zajímá
+	- zbytek dopočítám, mám-li údaj o celku
+	- když se budu ptát, jestli byl někdo trestán jinak, než sedmkrát
+		- typově podobný je dotaz: byl trestán jinak, než nula-krát? 
+		- dává více informace, ale těžko se automaticky vyřazuje 
+- dotaz na existenci
+	- samotná existence může být senzitivní
+	- není číslo, jako číslo
+- dotazy na pravděpodobné hodnoty
+	- pokud je něco v malém oboru hodnot, můžu získat rozumnou informaci
+- obecně je problém, že některé informace jsou odvoditelné z jiných
+
+Ochrana proti odvozování 
+- nebudu odpovídat na dotazy přes příliš malé množiny
+- budu zjišťovat, co vše je dopočitatelné pro uživatele z toho, co už uživatel má
+- velmi špatně odolává tomu, že se několik uživatelů domluví a sdílí informace
+	- nemůžu udělat tranzitivně, protože jinak za chvíli nikomu nic neřeknu
+- můžu vracet záměrně nepřesné informace 
+	- ať už zaokrouhlování
+	- počítám s tím, že se nad tím dělá statistika, takže to je stejně jedno
+	- úprava výsledku je možná před výpočtem (vstupy 0-9 dám jako 5) i po něm (upravím výsledek výpočtu - přičtu náhodnou hodnotu)
+	- pokud je náhodná hodnota v souladu s použitou statistikou, tak to vyjde nakonec dobře
+	- ale iterováním stejného dotazu stejnou statistikou získám přesnou informaci
+		-> můžu to udělat tak, že si zavedu chybovou tabulku a nebudu pokaždé vracet jiný šum, ale ten, který jsem již vrátil
+	- všechny dotazy na větší soubory budou pak dobře
+
+Víceúrovňové databáze
+- na každé úrovni senzitivity nějak označené záznamy
+- nechci ale, abych musel celkový výsledek skládat z více dotazů
+- vypočtená hodnota může mít větší senzitivitu, než vstupy
+- nesmí být vidět, že databáze něco skrývá - sjednocení dotazů
+- možnosti ochrany víceúrovńových databází
+	- pro každý stupeň ochrany jinou databázi
+		- pracuje se s tím špatně
+	- šifrování
+		- náročnější na výkon
+		- problém s odebíráním klíčů
+	- integrity lock
+		- v zásadě rozšířím databázi od další atributy
+		- s každou položkou její senzitivita
+		- s každým čtením a zápisem se kontrolují patřičná pole
+	- spolehlivý front-end
+		- před databázi předřadím access controler, který řeší autentizaci uživatelů a to, jaká data mohou dostat
+	- komutativní filtr
+	- pohled
+		- více databází, pro každou úroveň senzitivity pohled do databáze, tj. část, kterou daný uživatel může vidět
+		- když mám moc úrovní senzitivity, je pohledů příliš mnoho
+
+Bezpečnost v aplikačních serverech
+- dnes se spousta aplikací posouvá k formě aplikačního serveru
+- další vrstva virtualizace
+	- vlastní objekty, uživatelé (odlišní od databázových)
+	- jejich správa, řízení přístupu, atp.
+- je potřeba vyřešit vzájemnou komunikaci
+- end-to-end ochrana komunikace často končí na aplikační vrstvě 
+	- respektive pomocí SSL, který spadá spíš o úroveň níže, ale vše ostatní je aplikační
+- jedna transakce aplikačního serveru může vést k tisícům dotazů v databázi pod ním
+- pokud některá operace nevyjde, musí aplikační server umět udělat rollback celé své transakce 
+- lepší to je řešit na úrovni procesů aplikačního serveru (varianta s front-endem není možná, protože už to je nějaký front-end)
+
+Bezpečnost počítačových sítí
+- jakmile je systém přístupný z dálky, mění se rovnováha sil mezi ochráncem dat a útočníkem
+- nutnou součástí jsou zařízení, které nemáte pod kontrolou
+- musím je používat
+- proti drtivé většině problémů nepomůže ani šifrování
+	- někde to ani nejde
+- zmizela podstatná součást bezpečnostního mechanismu
+- můžu škodit "na dálku" 
+	- i kdyby na mě přišli, tak mě k soudu nedovlečou
+	- zvlášť, pokud si najdu zemi, která se nemá ráda s tou, kde škodím
+- přibývá možnost použití superpočítačů a síť tisíců strojů, které jsou spojené
+	- najednou může mít útočník mnohem více zdrojů, než mám já   
+- v pátek odpoledne narůstá počet útoků hackerů
+	- ví se, že až do pondělka budou pryč
+- nevím, kolik lidí se ke mně může připojit najednou
+
+Ochrana komunikace
+- mnoho aplikací, které se používají na něco jiného, než původně
+	- např. email byl zamýšlen jako nouzová komunikace, aby došly rozkazy i ve chvíli, kdy spadne část sítě
+	- není stavěný na to, aby byl bezpečný
+	- není možné stávající mechanismus upravit tak, aby byl spolehlivý
+- šifrování buď mezi uzly, nebo dvěma aplikacemi
+- IPv6 to má v sobě zabudované
+- čím níže to udělám, tím jednodušší realizace a větší transparentnost 
+- zbytečně ale šifruju netajné věci a zvyšuju tak výpočetní ýkon
+- end-to-end
+	- šifrovaný kanál si mezi sebou vytváří přímo server a jeho klient
+	- už na základě toho, na jaký port to přišlo, tak to posílá server naproti, který se autentizoval
+	- nešifruji cestu, ale zprávu
+	- můžu ji uložit tak, jak jsem ji přijal
+	- u šifrování vidím, jak velké zprávy chodí, od koho, komu
+	- není zaručeno, že to přijde
+	- chrání integritu, nechrání proti informaci o existenci zprávy
+	- módou jsou systémy s veřejným klíčem
+		- vypadá jednodušeji, než symetrické systémy
+		- z hlediska kryptografie nevím, odkud zpráva přichází - nevím, kdo to zašifroval
+		- nechci odpovídat někomu, jehož identita není známa 
+
+
+Ochrana komunikačních portů
+- jak znovu získat kontrolu nad perimetrem (komunikačním kanálem)
+- nejsou nová řešení, jen se vážou k novým technologiím
+- když se chci připojit, zavolám, nechám si říct, kdo jsem, zavolám zpět pro ověření identity
+	- i když někdo ukradl jméno a heslo, pořád centrála volala jinému, ne mě
+- je těžké vytvořit komunikaci místo někoho
+	- packet s jinou adresou odešlu, ale odpověď přijde jinam
+- většina věcí běží na standardních portech
+	- tichý modem - např. OpenVPN mimo 1194, jinde to nikdo nehledá
+- komunikace z vnějsku
+	- firewally
+		- bez firewallu se to provozovat prakticky nedá
+		- nestačí už jediný firewall směrem ven
+		- běhají už i na vnitřních strojích
+			- aby se při povedeném útoku na část sítě nepovedlo poškodit celý systém
+	- NAT - také do jisté míry chrání vnitřní stroje
+		- nejde se na ně dostat přímo
+	- content filtry
+		- dnes bohužel při zakázání javascriptu, stahování objektů a pod. se téměř nic nedozvím
+		- např. otevření tunelu po spuštění OS
+	- IDS 
+		- aktivní bezpečnost
+		- proti fázi, kdy útočník zjišťuje, co jsou mé stroje zač
+		- existuje vzorec chování, který je rozpoznatelný
+		- může aktivně zakázat komunikaci s daným zdrojem
+		- vede k tomu, že hacker udělá tuto první fázi pod jménem někoho jiného, čímž ho odřízne od dané služby
+- historka
+	- proxy v bance, jen https na vyjmenované stránky
+	- podařilo se dostat ven informace
+	- pokud útočník není hlupák a má pomocníky venku, vyhraje téměř vždy
+
+	- uživatelům se podaří dost často ucpat dráty
+	
+

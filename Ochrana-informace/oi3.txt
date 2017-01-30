@@ -1,0 +1,58 @@
+Common criteria
+- metanorma, která určuje, co musí splňovat bezpečnostní norma
+- rozděluje bezpečnost do několika sekcí, např.
+	- ochrana dat
+	- kvalita kryptografie
+	- možnost provést audit
+	- ochrana komunikace
+	- autentizace
+	- ochrana soukromí
+	- bezpečnostní management
+	- ochrana samotného bezpečnostního mechanismu
+	- řízení přístupu
+	- správné využívání prostředků na ochranu
+	- zavedení důvěryhodného kanálu
+- ISMS
+	- information security management system
+	- systém řízení
+
+BS7799
+- obecný postup, jak vykonávat zajištění bezpečnosti
+	- definovat zásady
+	- stanovit rozsah systému řízení
+	- hodnocení rizik
+	- vybrat cíle řízení a implementaci
+	- napsat směrnici
+
+- česká vláda poměrně nešťastně zvolila vlastní cestu, místo toho, aby čerpala ze stávajících norem
+	- zákon poměrně zastaralý
+
+Formální modely bezpečnosti
+- základní požadavky
+	- utajení
+	- integrita
+	- dostupnost
+	- anonymita
+- poměrně obtížné na pochopení
+- soustava pravidel, které když jsou naplňovány, zajišťuje, že jsou informace do nějaké úrovně chráněny
+- soustava pravidel je ten formální model bezpečnosti
+
+	- jednoúrovňový model
+		- nepracuje s vlastnostmi informací
+		- nerozlišuje mezi jednotlivými druhy dat
+		- ke všem datům je přistupováno stejně
+
+		- monitor model 
+			- monitor=autentizační autorita ověřuje, zda má daná entita přístup k daným datům
+		- information flow model
+			- z toho, jak je napsaný sw, zjišťuje, zda přístupem k danému suboru nedostane entita nepřímý přístup k dalším datům
+	- víceúrovňový model
+		- informace se řadí podle důležitosti
+		- model rozhoduje o míře ověření subjektu, který o informaci žádá
+		- vyhodnocují se vlastnosti dat i subjektů
+- senzitivita
+	- integrita informace
+	- podle vlastnosti
+		- některé jí mají více
+		- např. míra zastoupení citlivých osobních dat
+	-  

@@ -1,0 +1,143 @@
+Ochrana informací
+- na linku obluda.cz/ipradnasky.index.html je osnova
+	- nikoli samostatný text nebo skripta
+	- zkouší se z toho, co zaznělo, nikoli z materiálů
+- ne Přibilova skripta
+
+- jak to chápe on dnes
+- bezpečnost nelze úplně dostáhnout
+- je to proces, snažíme se přiblížit bezpečnému řešení
+- vnímat kontext, ne jen technické detaily
+
+Historie
+- bezpečnostní situace se neustále mění
+- dlouho byla chápána jako obor, který slouží k utajování - rozvědka, stát, policie
+	- dlouho to tak bylo
+	- postupně se přidával bankovní sektor a další
+	- vytváří se další pravdila, vnitřní důvody konání
+- stává se z ní obecně uznávaná komodita
+	-> začíná se tvořit ohledně ní oficiální legislativa
+	- zajištění integrity, dostupnosti a --- informací
+
+Pojmy
+- informační systém
+	- soubor prostředků (software, jeho konfigurace, záznamová média, zaměstnanci, kteří to spravují, ...), které potřebuji k získávání informací, pokračovaní ve své činnosti atp.
+	- ve chvíli, kdy začne být velký, začnou se jeho součástí stávat i další věci, např. místnosti, lidi, kteří jej umí zprovozńovat a opravovovat
+	- integrita
+	- před cca 7 lety měla jedna banka zaměstnance, který na požádání dokázal ukradnout data na požádání, stejná banka se rok poté stala bankou roku
+	- větší problém s tím, když někdo dokáže porušit integritu systému, např. poslat 50 000 000, když neměl, než pouze schopnost 
+	- v letadle nás zase zajímá dostupnost (např. bootování při letu) a pod.
+
+- bezpečnost
+	- neexistuje výčet věcí, které jsou bezpečnost, je to individuální
+	- stav, kdy není bezpečnostní incident (viz níže)
+
+- bezpečnostní incident
+	- situace, kdy došlo k narušení požadovaných vlastností informačního systému
+
+- bezpečnostní protiopatření
+	- snaha zabránit bezpečnostním incidentů
+
+- jde o peníze
+	- protiopatření nejsou zadarmo - např. zálohování
+	- v běžném provozu nemá význam
+	- je potřeba si uvědomit, že hrají roli hlavně v neběžných situacích, v nouzi dokáže zachránit firmu
+	- šifrování - ochrana před krádeží
+	- musí se vyplatit - buď je incidentů méně, nebo budou způsobovat menší škody
+	- i z pohledu útočníka je potřeba do útoku investovat, nese to riziko
+	- útok se vyplatí, pokud jsou data pro útočníka cennější, než pro ochránce
+	- méně cenné informace nejsou tolik chráněné
+- pricip nejsnazšího průniku
+	- běžný útočník neútočí na nejsilnější místo, ale na nejslabší článek
+	- nezáleží na tom, zda je 8 věcí správně, ale na tom, co je uděláno špatně
+	- i uprostřed jinak dobrého bezpečnostního mechanismu může být velká díra
+	- je potřeba myslet na vše
+	- systém dělá záznam o své činnosti
+	- expertní řešení jedné věci může vést k zanedbání ostatních
+	+ problematika přihlašování uživatelů - 14 znaků, divné znaky, nezapamatovatelné, 1 za 2 měsíce vyměnit, různé od 30ti posledních hesel
+		-> výsledkem bylo, že opravdu u málokoho byl problém se přihlásit na něčí stanice, bylo to někde napsané
+	+ administrátoři budou mít 17 znaková hesla, na každém účtu jiné heslo
+		- když je někdo pryč, tak dříve řekl do telefonu, teď pošle mailem, protože se nedá říct
+		- přestože je to zakázané chování
+
+- celkově poměr toho, co dokážu investovat já a co útočník (peníze, důvtip, čas, ...)
+
+Proč se bezpečnostní hra hraje?
+- právo na soukromí 
+	- těžké udržovat v době moderních technologií
+	- chybí sjednocení v tom, co vše je potřeba chránit
+- všichni mají nějakou vizi, jak to má vypadat
+- každý věří, že má právo, aby se udržovala okolo něj pravdila, která chce
+- u firem, státních složek, atp. jednoduché, u jednotlivců docela problém
+- často je to součástí nařízení v zákoně, nebo dáno smlouvou
+
+O co se hraje
+- aktiva  
+	- data, informace
+	- v současnosti si lidé myslí, že jde o to, aby nebyla ukradnuta fyzická média
+	- důležité ale je držet informace
+	- nejsou to jen média, ale i administrátoři
+
+- expozice
+	- místo potenciálního ohrožení
+
+- zranitelnost
+	- nedostatek bezpečnostního systému, který se dá zneužít
+
+- hrozby
+	- potenciální původci bezpečnostního incidentu
+	- některé nemůžeme ovlivnit, pouze se na ně připravit
+	- často jsou to uživatelé, ale může to být i administrátor
+	+ bankovní úředník omylem složil dva papírky dohromady
+		- prodával 100 000 akcií v ceně 50 000 po 1 Kč
+		- společnost to málem porazilo
+		- běžný uživatel může způsobit ohromnou škodu
+		- celkový objem pokynu malý, cena může být velká i malá, počet také...
+- model ohrožení
+	- když si rozmyslím hrozby
+
+	- cílem policie není vymýtit zločinost
+	- stejně tak bezpečáci nemají eliminovat všechny potenciální incidenty
+	- počet incidentů klesá s mírou bezpečnosti (-)
+	- cena opatření roste (x)
+		-> hledám optimum
+
+	^
+	|-
+	|-		 x
+	| -		x
+	|  -	       x
+	|   -	     x
+	|    - -    x
+	|    x	x-x- - -
+	|x x 		- - - - 
+	|-------------------------->
+
+- dopad
+	- finanční vyjádření naplněného bezpečnostního rizika
+
+- zbytkové riziko
+	- incidenty malé, které se můžou stávat častěji
+	- nebo velké, které se stanou jen velmi nepravděpodobně
+
+	+ prohrálo světové obchodní centrum - zdvojení systémů v obou budovách nepomohlo
+		- nikoho by nenapadlo, že padnou obě budovy
+
+- očekávaná ztráta
+	- dá se spočítat podle pravděpodobnosti incidentů
+
+	+ uživatel otevřel prázdný email, který posílal sám sobě, stáhnul archiv v příloze, obsahující java soubor
+		- kliknul na něj, nechal ho spustit
+		- dostal nabídku na odemčení souborů
+		- stáhnul ze zálohy, přišel o denní práci -> zbytkové riziko
+
+- bezpečnostní řešení
+	- existuje řada způsobů, jak řešení navrhnout a implementovat
+	- mechanismy provozuji, kontroluji správnost nastavení
+	- za rok přestane fungovat 15 - 20 % softwaru/techniky/...
+	- vyvíjí se nové slabiny, se kterými je potřeba spravovat
+	- čtení logů
+	- není to jednorázová investice
+
+- není na MFF, kdyžtak dát vědět mailem
+- konzultační hodiny nejsou, domluvit ideálně předem

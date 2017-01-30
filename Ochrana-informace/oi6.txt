@@ -1,0 +1,84 @@
+Informační systém
+- je potřeba mít ho na papíře
+- podepsané s lidmi, že ho budou dodržovat
+	- při pouze ústní dohodě ho časem lidé začnou porušovat
+- pozor na bezpečnostní politiku firmy při nástupu
+	- některé firmy chtějí, aby člověk ručil za něco, za co reálně ručit nemůže
+
+Stanovení IS
+- odhadnout cenu aktiv
+	- zejména ABSENCE věcí - pc, administrátor, atp.
+- odhadnout, co hrozí za hrozby
+	- kterých se nejvíce bojím
+- cena dopadu
+	- kolik bude stát, než se vrátím do původního stavu
+	- kolik toho nestihnu v průběhu nápravy
+	- budu muset vrazit peníze do PR ...
+	- přestanu vyrábět (všichni se dozví, co používám za látky...)
+
+- není jednoduché to kvantifikovat sami
+-	- co způsobí hrozba?
+	- přepočítávám vzhledem k vnějšku - jak se dostanu a za jak dlouho opět do funkčního stavu
+
+- musím chodit po organizaci a ptát se jich, kolik to bude stát
+	- oni do toho více vidí
+	- např. dotazník
+	- 
+
+- potřebuju odhadnout pravděpodobnost rizika
+	- otázky na lidi
+		- pozor, ptát se: jak často se stává, že...
+	- data z pojišťovny
+	- ptát se několika odborníků
+		- pokud sedí, mám celkem dobrý odhad
+		- pokud nesedí, poslat jim info, co tipovali ostatní
+		- druhý odhad by se měl již blížit realitě
+	- nechat se pojistit
+		- a vydělit riziko 3
+
+- spočítat to
+	- zjistím očekávané ztráty
+	- zkorigovat - nemůže to být více, než cena firmy (horní odhad)
+		- pokud je to moc nízké, sečtu to, co stálo rozbití věcí, ztráty atp.
+		- to je dolní odhad (reálné škody, ale nepotkalo mě to nejhorší/hodně špatného)
+
+- při aplikaci
+	- sepsat formulář typu - chceme tohle a budeme to dodržovat
+		- jednak kvůli zaměstnancům - vidí, že se to opravdu má dělat
+		- druhak kvůli financím - při dělání rozpočtu se jím může mávat a chtít na to podporu
+	- všem zaměstnancům to musí být vysvětleno, vznikne závazek
+	
+Bezpečnost
+- fyzická bezpečnost
+	- musím mít pohlídané vstupy
+	- přístupy ke strojům
+	- atp.
+	- může být částečně imaginární - čistě logický způsob - přistupovat mohou pouze ti správní lidé
+	- computing base
+	- tam to začíná
+- autentizace
+- oddělení autentizovaných a neautentizovaných uživatelů
+	- časově
+	- logicky
+	- kryptograficky
+	- fyzicky
+- auditabilita
+- integrita
+
+Stavění bezpečnosti
+
+- fyzická bezpečnost
+	- např. u čipů tím, že není jednoduché je rozložit při zachování informace
+	- logická pomocí PINu
+	-
+
+- autentizace
+	- pas, ID
+	- člověk je jasně dostopovatený až k narození
+	-> absolutní autentizace
+	- občas ale potřebuju vědět jen to, že je to opět ten stejný uživatel a nechci o něm vědět více
+
+	- lidé mají charakteristiky - věci, podle kterých je možné je autentifikovat
+	- je potřeba charakteristiky svázat s identitou  
+	- často potřebuji jiné identifikační dokumenty
+	- 

@@ -1,0 +1,83 @@
+Bezpečnostní mechanismus
+- součástí by měly být formální modely
+- zpravidla jsou o mechanismu dokázaná nějaká tvrzení - garantuje funkčnost do jisté úrovně bezpečnosti
+
+Monitor model
+- nepracuje s tím, jak důvěrné jsou informace, se kterými pracuje
+- pracuje s vazbami mezi uživateli a daty
+- pokud chce uživatel data, nastartuje tzv. monitor
+- na základě přístupových práv monitor rozhodne, zda přístup povolí či ne 
+- na základě systémových informací je možné monitor obejít
+- někdo, kdo přístup má, může informaci z důverné části někam překopírovat a tam se na ní podívám
+	- nemusí to být nutně přímé sdělení
+	- stačí if proměnná=něco then create file else delete file
+
+Information flow model
+- do systému vstupují pouze schválené programy
+- počítají se závislosti, aby nebylo možné provést únik informace viz výše
+
+Clark-Wilson model
+- starost o integritu
+- pravdila zachovávájící korektnost
+	- po validaci musí být všechna validovaná data korektní
+	- certifikované programy musí zanechat data v korektním stavu
+	- s daty můžou pracovat pouze certifikované programy
+	- každý objekt spouštějící proceduru musí být certifikovaný
+	- musím o tom vést záznamy
+	- každá transformační procedura zpracovávající nechráněná data musí zanechat systém v korektním stavu (nebo do něj nezasahovat)
+	- pouze administrátor provádějící certifikaci může provádět změny relací, nesmí mít právo spouštět procedury, které administruje
+- hlavně pro vojenské organizace
+
+Chinese wall model (Brewer-Nash)
+- je u něj pozoruhodné, že se v mnoha případech nedaří dodržovat
+- když chci přistupovat k nějakému objektu, tak musí být v jiném datasetu, nebo je v jiné konfliktní třídě
+- hodně důležitý bussiness consulting 
+
+Jednoduchá bezpečnost
+- můžu přistupovat k informacím ze stejného datasetu, do kterého jsem už přistupoval
+- dále do datasetu z jiné skupiny
+- můžu zapisovat, pokud mám přístup a není čten žádný nesanitizovaný objekt z datasetu, do kterého chci zapisovat
+
+Graha-Denning model
+- subjekty, objekty, přístpová práva, přístupová matice
+- mělo by jít bezpečně odstranit administrátora
+- a nechat ho vzniknout
+- pokud admin. účet zakážu, nepřicházím o možnost ho opět založit?
+
+Take-Grant system
+- create, revoke, take, grant
+- dokážeme v něm v polynomiálním čase zjistit dostupnost práv pro daný subjekt
+
+Víceúrovňové modely
+
+Bel-LaPadula model
+- stará se o to, aby informace nedoputovala na nižší stupeň utajení
+- informaci můžu zapisovat jen do dokumentu, který má stejný nebo větší stupeň ochrany
+- můžu číst jen informaci, na kterou mám prověření (úroveň prověření je větší nebo rovné úrovni bezpečnosti)
+- vojenský systém
+- nevýhoda: teoreticky na základě informací nemůžu velet
+	- můžu vytvořit novou informaci a překlasifikovat ji
+	- musí tam být formální krok, který udělá člověk
+	- není to automaticky systémem
+
+Biba model
+- duální k předchozímu, týká se integrity dat, ne lidí s přístupem k nim
+
+Bezpečnostní politika
+- netýká se jen velkých subjektů
+- není pravda, že by nic neřešila, nebo byla moc nákladná
+- není potřeba, aby byla šitá od počátku na danou firmu
+- lidi se děsí bezpečnostní politiky
+
+- pro malou firmu stačí, že data nebudou na notebooku, který je odložený v autě, budu šifrovat komunikaci, nebudu nechávat data na flashce, ...
+- je potřeba, aby pokrývala veškeré okruhy činnosti
+
+- bezpečnostní politika pomůže zjistit, co všechno mám a jak je to důležité
+- historka 
+	- zazděný pc v IBM
+
+- důležitý server, vše zálohované, atd.
+- ale pod stolem router za 700, který když vypadne, tak je důležitý server odpojený od všech uživatelů
+	-> nebude se kupovat zbytečnosti
+	- bývá potřeba zajistit podobnou úroveň všech technologií
+	

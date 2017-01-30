@@ -1,0 +1,101 @@
+Obnova provozu
+- musím mít z čeho obnovit - záloha, ...
+- a na co obnovit - HW
+	- zkrátka, musí to být připraveno předem
+- okolí se mění 
+	- útoky
+	- HW
+	-  můj systém 
+		- způsob užívání
+		- moje potřeby
+		- co systém přináší
+
+Zálohy
+- jsou k ničemu, pokud nemám software, který zálohu dokáže nahrát do systému
+- potřebuji si zálohovat i konfiguraci systému a použitý software
+	- abych neskončila s páskou v rukou a serverem, který ji nedokáže přečíst
+
+Historka:
+- vysoký manažer firmy XY, ptali se ho, jak se stalo, že z roku na rok se zmenšila velikost
+zařízení z velké skříně na malou věc
+	- řekl, že hlavním cílem lidí je zálohovat
+- nestačí, že to je na páskách, ale že to z těch pásek taky dokážu dostat
+	- to, že to jde v klidu, v teple, na jednom vybraném stroji, je fajn
+	- ale v reálu ztížené podmínky a mnohem více (jiných) strojů
+- když dokážu získat data pro jeden stroj za 2 hodiny, jak dlouho to bude trvat pro 60 strojů?
+- dělají se testy, které simulují globální výpadek systému
+	- zkusit si to nainstalovat na cizí HW
+- samotný systém záloh se musí vejít do provozu
+
+- důležité je i to, jak data ukládám
+	- dokážu se v tom vyznat a najít je rychle?
+	(ať už fyzicky nebo elektronicky)
+- je mimořádně trapné, když se mi stane, že je záloha špatná
+	- ne vždy musí být škoda tak velká, že si jí všimnu rychle
+	- občas potřebuji sahat poměrně daleko do minulosti
+	- je dobré, když je to offline
+- často se dělají útoky stylem: přepíšu všechno, na co dosáhu
+	- proto je potřeba mít offline zálohy
+- prvním cílem není obnova, ale zjistit, co se stalo
+	-> jinak se to příště stane znovu
+	- nejdříve zajistím informace o tom, co se stalo
+	-> není nutné mít obnovení moc rychlé
+
+Záložní média
+- výměná 
+	- USB 
+		- mizivá kapacita, levné řešení
+	- pásky
+		- nejlevnější cena za byte
+		- dost se liší od těch, co byly dříve
+		- potřebuju kvalitní materiál
+		- nejrozšířenější
+	- WORM disky
+		- diskutabilní pro dlouhodobé zálohy
+		- nejistá spolehlivost
+		- malá kapacita
+	- hard copy
+		- kopie ve stroji
+		- lepší, než nic
+- nevýměná
+- občas je dobré, když je to daleko
+- důležité je zálohovat si hlavně změny
+
+Útoky
+
+- salámový útok
+	- využívá zaokrouhlovacích chyb
+	 - například někdo se živil na úrocích z plateb - nechal si na účet přeposílat všechny platby banky, těžil úroky a po jednom dni poslal platbu příjemci
+- skryté kanály
+	- programátoři zanesou do programu způsoby, jak z nich těžit data
+		- soubory
+		- něco ve výpisu, co není moc vidět
+		- ...
+- chyby v programech
+	- problém hlavně při čtení vstupu
+	- 
+- hladové útoky, DOS útoky
+- viry
+
+Metody vývoje bezpečného SW
+- dnes je velmi krátká doba mezi tím, kdy je chyba odhalena a tím, kdy je chyba odhalena
+- retroaktivní prostředky typu antiviry se dostávají na hranici svých možností
+- pokud se skrytě podaří vygenerovat 400 000 exemplářů, tak celosvětový dopad bude 16 hodin
+- při 3 000 000 se doba sníží na polovinu
+- reakční doba v řádu hodin
+	- pokud se mi tam dostane kód, který tam být neměl, jsem už téměř jistě ztracen
+=> potřebuji slušně vyvintý software
+- bohužel ani velké podnikové softwary nejsou dobře vyvinuté
+	- dříve filosofie - stačí, když to bude stabilní
+- modularita
+	- složit program z malých jednoduchých kousků kódu
+	- dříve se na MFF učila práce s OS, který byl modulární tak, že žádný kus kódu není delší než 50 řádků
+	- u kousků kódu musí být přesně zdokumentováno a specifikováno, co má dělat
+	- psaní dokumentace ~ nevolnictví
+	- musí to mít dobře specifikovaný vstup, výstup a funkci
+		- nechci šířit, jak přesně to dělá - odhalím slabiny
+- zapouzdření
+- ukrytí informací
+
+Správa verzí a konfigurací
+- je potřeba 

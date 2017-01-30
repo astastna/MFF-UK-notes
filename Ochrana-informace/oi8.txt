@@ -1,0 +1,240 @@
+Mechanismy ochrany obecných objektů
+- řešíme, jak předávat oprávnění uživatelům
+	- datové struktury
+	- modely
+	- efektivitu
+		- zejména ve vztahu k potřebě granularity
+		- abych byl schopen zvládat snesitelné množství práce a rozeznat, co ten člověk může dělat (ne tím, že zkoumám všechna jeho oprávění, protože jich je milion)
+		-> co ten člověk dělá ? (z hlediska bussines modelu)
+		- potřebuju lidi, kterým můžu říct, že mají něco udělat
+			- pani na recepci nemá mít přístup k účetnictví
+			- potřebuju rozdělit jednotlivými lidem nějaké role a k nim přiřadit skupiny oprávnění
+				- a dodržovat to!
+- datové struktury
+	- adresář
+		- každý subjekt má svůj adresář, který odkazuje na všechny dokumenty, se kterými může pracovat
+		- špatně funguje dotaz typu - kdo všechno s tím souborem může pracovat?
+		- žádný uživatel nesmí zasahovat do svého adresáře
+	- access control list - seznam oprávnění
+		- každý soubor má seznam uživatelů, kteří s ním můžou pracovat
+		- díky tomu, že tam jsou odkazy na uživatele, tak dokážu při vhodném pojmenování uživatelů přidávat práva např. celé skupině užvatelů
+		- pořád ho ale potřebuji aktualizovat a mít uživatele zavedeného v systému
+		- dnes se používá, ale řízení není na úrovni jednotlivým soborům/částím systému, ale jednotlivým službám
+		- poměrně vhodné
+	- přístupová matice
+		- bývá řídká
+		- přesto tam musí být
+		- velmi neefektivní
+	- způsobilost
+		- token, který mi dává způsobilost pracovat s daným objektem
+		- když s tím chci pracovat, tak předložím token
+		- výhodou je to, že je určený k centralizaci řízení oprávnění
+		- pružné z hlediska budoucích přístupových metod
+			- snadno se do toho přidávají nové technologie přístupu, díky obecnosti
+	- security label
+		- podobné access control listu
+		- každý subjekt má visačku - "ověření", který říká, co smí, stejně tak objekt má visačku, kdo s ním může pracovat (obecně člověk na nějakém "levelu" bezpečnosti)
+		
+
+- zvládání granularity
+	- nechceme se zbláznit a každému přidávat tisíc práv
+	- chceme rozdělit uživatele do skupin, každá skupina má stejná oprávnění
+		- např. účetníci, programátoři, manageři, ...
+		- práva nepřiřazuji lidem, ale skupině (nemusím 20x, stačí jednou)
+	- možné pomocí rozeslání hesla, které se nějak vytvoří z identity
+		- pokud zapomene, je těžké zjistit, jak vypadalo
+		- dá se špatně znovu vytvořit při vyzrazení atp.
+	- dočasné/omezené přidělení oprávnění
+		- umožní mi provést manipulaci s daty s právy vlastníka
+		- např. passwd - dostanu právo roota, ale jen na řádek mého uživatele
+		- poměrně silný mechanismus, jak dělat změny nad daty, na která nemám právo
+		- velice nebezpečné - jakmile vznikne chyba, dostanu rozsáhlá oprávnění
+		- je potřeba to správně naimplementovat
+	- VAX VMS/SE
+		- 
+
+	- systém rolí a skupin
+		- umožňuje hierarchii
+			- mistr i skladník můžou jít do skladu
+		- na největších systémech se používá obecnější věc než obecný identifikátor
+		- můžu si naklikat role - sekretářka, účetní, atd.
+		- později můžu přidat oprávnění dané roli 
+		- můžu dělit i geograficky - jednotlivé pobočky, ...
+		- jako si dělám balíčky z oprávnění, tak si můžu udělat skupiny uživatelů
+			- oprávnění sbalím do role
+			- uživatele do skupin
+			-> skupině uživatelů přiřadím roli
+			- když přijde nový člověk, tak ho dám do skupiny a tím dostane právo
+				- dvakrát nepřímé přiřazení
+		- někteří lidi zastávají v reálu více pracovních úkonů
+			- zachovává složitost a někdo pořád musí vědět, co která role 
+
+- záložní média
+- historka:
+- pokud mám 0,5 MW příkonu, mám problém to uchladit, kam to umístit, atp.
+- zařízení s 3t, na kolečkách -> musí se umístit na roznášecí rošt, nedá se na něj najet
+- pak 5 dnů připojovali ke stovkám drátků
+- potom přišel pán, co načrtnul, kde to má stát, a řekl, že je moc úzká ulička
+- cena cca 250 000
+- když si to představím, tak přestane být nesmysl uvažovat o tom, zda je nutné to posouvat
+ 
+- občas je lepší mít to na více místech
+	- výměnná
+		- USB 
+			- mizivá kapacita
+			- snadno dostupné
+			- levné
+		- pásky
+			- stovky GB až desítky TB
+			- 
+		- WORM disky
+		- hard copy
+	- pevná
+		- servery
+		- (více viz jeho papír)
+
+- metody fyzické ochrany
+	- kromě toho, že se k datům nedostanou lidi, co nemají, se může stát ještě jiná špatnost
+
+	- přírodní katastrofy
+		- pokud mám IS umístěný špatně, tak mám smůlu
+		- většinou "důkladné"
+		-> nezbyde nic
+		- nekompatibilní s vodou - nejen elektronika, ale i archiv
+		- voda jde zhora i zdola !
+		- rychle zajistit nepromokavý kryt
+		- často přichází velmi rychle
+		
+		- historka:
+		- byli několik metrů nad povodní v roce 2002
+		- když vezli na člunu naftu pro diesel agregát, tak je tam hasiči nepustili
+			-> nejen být nad vodou, ale i umět tak nějakou dobu fungovat
+
+		- požáry - automatické systémy hašení, odolné budovy, ...
+			- detektor - začne pískat -> mám 60s na opuštění serverovny
+				- naplní se to nehořícím plynem neobsahujícím kyslík
+
+			- historka
+			- serverovna na nohách naplněných dusíkem
+			- v moři
+			- chtěli naštvat všechny, nakonec se to nestalo	
+	
+	- ztráty napájení
+		- notebook - triviální
+		- čím větší systém, tím větší problém
+		- mít záložní zdroj je technologický oříšek
+		- řeší se to v prvním plánu tím, že mám okamžité zdroje
+			- vydrží řádově minutu až dvě
+		- pak druhá vlna - motorgenerátor (chvíli se startuje)
+			- dokáže produkovat proud relativně dlouho
+		- poskytovatelé serveroven se tváří, že mají zásuvku s nekonečným zdrojem
+			- několik nezávislých zdrojů
+			- UPSKy
+			- diesel agregáty
+			- v teorii krásné, ale takový generátor potřebuje za hodinu 2m^3 nafty
+				- ne vždy se podaří převést serverovnu na záložní napájení
+				- v případě výpadku bývají zácpy atp.
+				- vždy se něco pokazí
+
+			- historka
+			- 30 strojů, koupili si UPSku
+			- naplánováno, že až vypne elektřina, tak se vypnou např. tiskárny a zbytek se dokonfiguruje
+			- když to poprvé vypadlo, tak si admin zapnul monitor a jak to bylo CRT, tak po zapnutí barevnosti byl moc velký pík napětí a UPSka se vypnula (?)
+
+		- dá se řešit i pomocí setrvačníků
+		- ten generuje dost elektřiny, než stihnu zapnout diesel generátory
+		
+	- chlazení
+		- historka
+		- neuvěřitelné, ale jde to 
+		- menší serverovna, v pátek odpoledne revize klimatizace
+		- 2+1, 3 klimatizační jednotky, aby fungovalo chlazení i při výpadku jedné jednotky
+		- chlapík něco pošťoural
+		- nejdřív jeden server, pak dalších 25
+		- dříve tam visel teploměr, zůstal tam -> 70° C
+		- chlapík vyměnil chlazení za topení na stejný výkon
+		
+		- potřebuju mít dostatečné a záložní
+
+	- hmotnost
+		- potřebuju podlahy se zvýšenou nosností
+		- probém zejména pro záložní centrum při havárii
+
+	- prašnost, vibrace, a další
+		- blesk
+		- musím pamatovat na všechny okolnosti a pracovat s tím
+	
+	- prostorová ochrana	
+		- morbidní příklad
+		- rozumné opatření proti vlivům je geografická dislokace 
+		- nemít to ve dvou věžákách vedle sebe ...
+		- obrovský význam
+
+		- historka
+		- záložní kapacity na ostrově vzdáleném 50 km
+		- měli data i na kontinentu, kvůli tsunami
+
+		- na velké vzdálenosti je problém s latencí
+			-> kopie nejsou stejné
+		- velmi dobré - budu mít s čím začínat
+
+		- musím mít prostředky na to, abych to vůbec z ostatních lokací dokázala dát dohromady a spustit
+		
+		- historka
+		- nejmenovaná fabrika se zbavila ozbrojených důchodců na vrátnici
+		- najali si profesionální bezpečnostní firmu
+			-> bezpečnost se zhoršila, stráže kradly více, než původní zaměstnanci
+
+	- elektronická prostorová ochrana
+		- nastudovat si za dú
+		- obecně věcičky, co umí detekovat problém
+
+	- detekce výstupu
+		- chci mít pod kontrolou nejen to, kdo přistupuje, ale také, co ze systému vychází
+
+		- podobně jako mají v obchodech čipy
+		- materiály, média, ale i kartuše, válce, papíry - pozor na to, může nést senzitivní informace
+		- musí být rozumně kontrolováno
+		
+		- zkartovat !!
+			- často mají lidi co přečtení, to výtisk
+			- nemělo by se tak zacházet s daty v první řadě
+
+		- nejen to, že zkartuji papír, musím ho certifikovaně dostat do drtiče
+			- nic nesmí upadnout, nic se nesmí ztratit
+			
+		- degaussery 
+			- silný elektormagnetický výboj
+			- díky technologiím je možné přečíst i několik zápisů přes sebe
+			- smazání nepomůže - jen se označí za smazané
+				- přepsání jednou také nepomůže
+			- nemusí být jendoduché
+
+- elektromagnetické vyzařování
+	- nepatří to sem, ani nikam jinam, tak to přidává
+	- všechny přístroje vyzařují 
+	- když se dostanu dostatečně blízko, s dostatečným vybavením a dovednostmi, ...
+	- firma, co je schopná říct, co mám za monitor či jaký mám procesor
+	- ledacos je možné zrekonstruovat
+	- metody ochrany
+		- natočení monitoru
+		- komponenty, které nevyzařují moc - speciální
+		- pohlcující obaly, odstíněné místnosti
+		- vzdálenost - intenzita vyzařování klesá se čtvercem vzdálenosti
+		- zmatení - vysílám množství podbných signálů
+		
+- obnova provozu
+	- musím mít prostředí, ve kterém to můžu provozovat
+	- co když o něj přijdu - vyhořím, někdo mi to ukradne, přijede někdo s bagrem, zemětřesení, nastane převrat a je to zabaveno, ...
+	- nebo - umře admin 
+		-> tohle vše mohou obsahovat bezpečnostní plány
+	- musím vytvářet prostředky, abych mohla plány provést
+		- musím to zajistit dopředu
+		- zařídit palivo, náhradní servery, atp.
+		- jakmile nastane katastrofa, nic nepořídím
+		- musím mít i jídlo a místo pro lidi, co to budou uvádět do provozu
+		- nezapomenout na tužky a papíry ! :D
+		- to vše dopředu
+	
+	- nefunguje internet na Normanských (???) ostrovech
+	- protože loď zapomněla vytáhnout kotvu 
