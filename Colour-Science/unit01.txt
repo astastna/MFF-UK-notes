@@ -1,0 +1,331 @@
+Human eye
+- simple structure
+- reverted image is projected on the retina
+- chromatic abberation 
+	- because of different wave length, the colors detected on retina are shifted
+	- that means that red version of the image is shifted to different place than the blue 
+	version of the image
+- there is powerfull image preprocessing in the retina
+	- there is ~150x more information from the photosensitive cells than the nerves can
+	transfer to the brain
+	- the preprocessing is very similar to edge-detecting algorithms in computer graphics
+	- there are two kinds of cells in retina 
+		- center
+		- off center
+	- the cells behave like the edge detection matrix 
+		- in the middle they magnify the signal (positive number)
+		- on the border of the cell they lower the signal (negative number)
+	- the main difference is that in computer the process is made sequentely, whereas in the eye
+	all possible positions of the matrix are counted in parallel
+
+- post-processing
+	- luminance = G + R
+	- red-green = G - R
+	- blue-yellow = B - (G + R) <=> B - luminance
+
+Definition of color
+- color describes at least 3 things
+	- property of an object
+	- characteristic of light rays
+	- human sensation 
+- because it depends on processing in human brain, it is very hard to have an exact definition
+
+- who is interested
+	- artists
+	- physicists, chemists
+	- neurologists
+	- computer scientists
+	- philosophers
+	- etc.
+
+History
+- antics
+	- part of natural phylosophy
+	- linear colour models
+	- Arisotle
+		- colours mixture of white and black
+		- linear scale according to perceived brightness
+		- partly gained from observations of the sky
+		- red in the middle between black and white
+
+- middle ages
+	- variations of linear colour ordering systems
+	- problems of linear colour ordering systems
+		- ordering of colours according to luminance
+		- predictions on colour mixing not always right
+		- no prospect of additive / subtractive colours
+		- places black and white on the same level as colour hues
+	- Grosseteste (1230) - improvement of the linear colour system
+		- first separation of chroma from hue
+- renaissance and later
+	- 2- and 3-D colour spaces with the development of natural sciences
+	- Alberti (1435) - 3D colour space
+	- Leonardo (1510)- 4 primaries
+		- is white a proper colour? 
+		- is green primary?
+	- Newton (1672) - first to take the correct conclusions
+		- learned from the fact that white light can be broken to the colours of 
+		the rainbow by a prism
+		- proved that light is a heterogenous mixture of colours
+		- first colour circle
+	- J.H. Lambert (1760)
+		- tried to describe all colours as a mixture of blue, red and yellow
+		- effectively precursor of CMY models
+		- not universal colour model - not all colours can be gained through this model
+	- Harris (1776) - made colour circles popular
+		- only 2D models
+	- Goethe (1800) - wrote a lot about colour and thought it to be the main accomplishments
+		in his life
+		- developed theory which seemed to contradict Newton
+		- nowadays the two theories are seemed to describe the same things from different 
+		perspective
+		- studied colours on the edges 
+		- ( colours perceived only on the edges light-dark)
+	- Otto Runge (1810) - colour sphere
+
+Physics
+- light 
+	- electro-magnetic radiation
+	- important is the frequency
+	- ray of light contanis many arrays with different frequencies
+- spectrum 
+	- distibution of wavelength intensities per wavelength
+- particle / wave
+	- lightwaves (usually) behave according to laws of geometric optics
+	- diffraction and non-linear optics can be archieved only by wave interpretation
+- polarization
+	- light is a transverzal wave
+	- frequency doesn't give full information about the 2D wave in 3D space
+	- polarization is how the plane of the wave is inlined in comparison with xy-plane
+	- it is called phase inforation
+	- rays with different frequency and different polarization have the same colour, but 
+	interact with the matter differently, i.e. difference in reflection, refaction, etc.
+	- Heidinger's brush
+		- people are able to see the polarization of light
+		- it is ornament of yellow and blue thick lines perpendicular to each other
+		- the rotation is dependent on the polarization of light
+		- can be observed on the sky while having sun behind your back or on white place of 
+		an LCD monitor
+
+	- insects 
+		- many insects can see polarization of light
+		- they are able to have a good orientation thanks to this efect
+
+- LASER
+	- Light Amplification by Stimulated Emission of Radiation
+	- all photons are in phase and usually in frequency too
+	- producest coherent light
+	- propagates in almost perfectly straight line
+
+- colour of light
+	- when perceiving the emitter directly, only it's characteristics have to be taken into account
+	- otherwise the interaction of light with other objects plays significant role
+
+- energy levels
+	- each ligth frequency has it's energy level
+
+- visible range
+	- the visible range for humans (and more generally by any organic senzor) is given by the 
+	minimum and maximum energy levels
+	- too high energy levels destroy molecules (UV)
+	- too low energy levels are hard to detect and focus on (IR)
+
+- quantum properties of matter
+	- only certain discrete states and transitions between them are allowed
+	- these states correspond to energy levels and frequencies
+	
+15 causes of colour
+- 1-3 simple exitations and vibrations
+- 4,5 transitions involving ligand field effect
+- 6,7 transition between molecular orbitals
+- 8-11 transitions involving energy bonds
+- 12-15 geometry and physical optics
+
+- 1,2 and 11 are self luminous
+
+- 1 colour from incadescence
+	- blackbody radiation
+		- all matter, regardless of composition, emits light of certain frequencies by given
+		temperature
+		- infrared - below 800 K 
+		- red - Draper point, 800 K
+		- white - extremely hot iron
+		- blue - plasma in hot stars, 20 000 K
+	- Fraunhofer lines
+		- when studying the light from the Sun, scientists discovered that there are 
+		some frequencies with much less intensities than would be expected 
+		- it turned out that some light frequencies are partly absorbed by the atmosphere
+		of the Sun
+- 2 gass excitation
+	- sodium lamps has double emission line
+	- Stark shift
+		- shifting and splitting of spectral lines thanks to molecule being influenced by 
+		electric field
+		- with magnetic field it works similarly and is called Zeeman effect
+		- can be explained by quantum mechanics
+- 3 colour from vibrations and exitation
+	- e.g. reason for water being light blue
+	- it absorbs light from outside and then emits it as light blue light
+
+- 11 band gap emission
+	- LED
+		- semiconductor diodes where the transition from one semiconductor to another
+		causes certain decrease in energy level for electrons going through the interface
+		- the energy is emitted as light
+		- emitted energy is exactly one value for given LED
+		-> the resulting light is monochromatic
+		--> in order to have more "natural" light, more LEDs have to be combined 
+		
+		- it is hard to design and build, because the emission takes place in an opaque material
+		- more energy efficient
+		-> are expected to be used more often in the future
+
+- 4 colour from transition metal compounds
+	- colour of many minerals and paint pigments
+- 5 colour from transition metal impurities
+	- occurs in otherwise uncolourful rocks
+	- for example ruby, emerald
+	- atoms and molecules with electron pairs are hard to excite
+	- the amount of energy needed for excitation can be influenced by nearby molecules
+	- pure corund (Al2O3) is colorless, 1% of chrome make it ruby
+	- ruby is corund based and emerald beryillium base, both get coloured by 1% chrome
+	- alexandrite
+		- lattice between ruby and emerald
+		- green on daylight, red under incadescent ilumination (i.e. blackbody radiation)
+	- pleochroism
+		- some crystals change their colour according to the viewers point
+		- possible only in crystals with multiple axis
+		- special form of ligand field effects
+		- depends on the orientation of crystal lattice
+ 
+	
+- 6 colour in organic compounds
+	- some organic compounds contain electrons suitable for absorbtion in visible spectrum
+	- e.g. organic dyes
+		- fluorescence quite common
+		- usually contain structures similar to nucleus of benzene
+	- organic molecule reflectence
+		- smooth reflectance spectra
+		- easy to measure and represent in rendering
+
+Fluorescence
+	- re-radiation of energy on different wavelengths
+	- quite common, hard to measure
+		- need bi-spectral photometers
+	- Stokes shift
+		- fluorescence for light
+	- mostly the fluorescence is at lower energy levels
+	- there is transfer of energy
+		- at some point the item reflects more energy, than currently absorbs
+	
+	- bi-colured reflection
+		- some light is reflected, some gets inside and undergoes wavelength shift on the 
+		colorant molecules
+		
+- 7 colour from charge transfer 
+	- saphire 
+		- corund with 1% of iron - colourless
+		- corund with 1% of titan - pale yellow
+		- corund with 1% of both - deep blue
+		-> there is charge transfer between Ti(4+) and Fe(2+)
+	-  
+
+- 8 metals, alloys
+	- copper, silver, gold
+	- in normal molecules, there are single electrons with well-defined energy levels
+	- in metals, there are lots of electrons with so many energy levels, that it can be viewed as 
+	continuous
+	- light can penetrate at most  ~100 atoms deep
+	- then it is immediately absorbed
+	- efficiency of this process can be wavelength dependent
+		- higher energies are less efficient for some materials (copper, gold)
+	- direct absorbtion is hard to observe
+		- exeption: gold plated sunglasses	
+
+- 9 pure semiconductors
+	- silicon, pure diamond, cadmium yellow
+	- there is a gap between the conductive and valence band
+	-> photons of certain energy aren't absorbed
+	- the gap differs for different matters
+
+- 10 doped semiconductors
+	- coloured diamonds, LED's
+	- the additional atoms/molecules add intermediate levels to the energy gap
+
+- 11 colour centres
+	- smoky quartz, amethyst
+	- the impurities change the number of electrons locally
+	- these places can absorb light on some energy levels
+
+- 12 dispersion
+	- rainbows
+	- wavelength depends lineary on interference and non-lineary on refraction
+	- Sellmeier coefficients describe behaviour of glass and crystals
+		- approximations of the dispersion curves
+		- sum of quadratic terms with empirical coefficients
+		- alternative: Cauchy's formula
+	- dispersion sampling, two ways
+		- single wavelength in a path tracer
+		- trace normaly and add some random jitter to prevent from aliasing effects
+	- index of refraction (IOR) depends on wavelength
+	- light is split into its spectral elements
+	- normal dispersion
+		- rainbow
+		- index of refraction decreases with wavelength
+	- anomalous dispersion
+		- index of refraction behaves non-lineary
+		- partially reversed prismatic colours
+	- dependency with absorbtion
+		- IOR and absorbtion influence each other
+		- there are Kramers-Kronig relations to calculate one from the other
+		- anomalous dispersion occurs around absorbtion frequencies
+	- extinction coefficient - how much something absorbs light (per mass or number of molecules)
+	- experiment
+		- take three solutions with different concetration of some special chemical
+		- compare with prisms
+		-> extinction coefficient doesn't influence IOR
+	- rendering
+		- for some materials, anomalous dispersion cannot be neglected 
+
+- 13 scattering
+	- blue of the sky
+	= deflecting the direction of light in transparent environment
+	- the air deflects rays of light
+	- isn't dependent on aerosols in the air - it makes even the pure air
+	- wavelength dependency - reason for blue sky and red sunsets
+
+- 14 interference
+	- butterfly wings
+	- tiny structures can change the way the material looks like
+	- small differences in the propagation of light can lead to cancellation or reinforcement
+	- metallic and pearlescent colours
+		- goniochromism - colour changes with viewing angle
+		- micro and macro appearance differs
+	- structural colour
+		- extermely intense colours
+		- highly resistent to UV
+		- mechanically vulnerable
+		- practically always change hue with viewing angle
+	- pigment colour
+		- doesn't change colour
+		- less intense
+		- tends to fade out with time (destroyed by UV)
+		- 
+	
+- 15 difraction
+	- opal, diffraction gratings
+ 
+Solid colours vs. light
+- in CIE Lab, L = 100 is white (<=> "light")
+
+Band pass vs. band gap
+- monochromatic colour
+	- spectrum shows only narrow band in which the right colour goes
+	- almost black
+- band gap colours
+	- caused by narrow gap in the band
+	- almost white
+	- spectrum shows everything but a small gap
+- highly colourful paints have to be full colours or semichromes
+- full colours have maximum colour content for given hue
+- band limits have to be at complementary wavelengths

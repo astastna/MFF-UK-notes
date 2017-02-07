@@ -1,0 +1,40 @@
+White balance
+	- what we do in computer to correct colors
+Colour adaptation 
+	- what our brani and eyes do, so we perceive the colours of the objects the same
+	- no matter the light environment
+Hue
+- how differs the given light stimulus from red, green and blue
+
+Lightness
+- brightness relative to the brightness of white object perceived under the same conditions
+ brightness / brightness of white
+
+Brightness
+- amount of light
+
+Colorfulness
+- perceived quantity of hue content in a stimulus
+
+Saturation
+- colorfulness of object realtive to it's own brightness
+
+Chroma 
+- colourfulness of an object relatively to the brightness of white object under similar viewing conditions
+
+See presentation from Mr. Fairchild (from conference)
+
+How luminance impacts color?
+- high luminance display
+	- why TV's aren't high luminance? it would be easier than 3D, HDR, ...
+	-> colors behave differently
+- eye trackers
+	- if we know in which parts of the image people look the most
+	- we can render well only that part
+	- mostly not done because it is more problematic to measure it than to render it
+	- but can be used by interactive rate-racing
+
+- a whole technology can be built around color science
+
+- a lot of scientific work is about meeting people and exchanging ideas
+- interaction is needed 

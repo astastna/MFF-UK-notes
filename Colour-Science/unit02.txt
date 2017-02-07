@@ -1,0 +1,143 @@
+Human visual system
+- main organ - eyes
+- vision cca 80% of all human perception
+- postprocessing is needed in order to get some insight
+- not all of the processes in visual perception are understood
+	- luckily, the exterior ones, which are mainly important for colour science, are good-known
+	- exterior = processing
+- visual cortex
+	- part of brain responsible for vision
+	- at the back of the head
+	- optical nerves cross each other
+	- something happens also in the inner part of the brain (as the signals go through it), but
+	it is not well understood
+	
+
+Human eye
+- the reversed image is projected on the retina
+- chromatic aberation 
+	- e.g. red version of the image is shifted differently than blue, green, etc.
+- retina
+	- some preprocessing needed here
+	- there are photosensitive cells
+		- rods
+			- cannot detect colour
+			- almost in all parts of retina but fovea
+			- responsible for night and low- light vision
+			- achromatic vision
+			- react slower to the light, the signal lasts longer time
+			- has photosensitive pigment rhodopsin inside
+			- it is called purple vision - absorbs yellow/green, transmits purple
+		- cons
+			- 3 kinds - red, green, blue
+			- mainly in fovea
+			- responsible for colur vision
+			- react quickly, the signal is short, fire 4x faster than rods
+	- the cells have light sensitive tips
+	- can register single photons
+	- there are also nerves and blood vessels around the photosenitive cells
+	- all four types of photosensitive cells have it's own photopigment
+		- based on a chromoforic grup
+		- connected to the opsin protein
+- bleaching
+	- electrochemical reaction, which converts incident photons to nerve stimuli
+- receptor absorbance
+	- blue cons
+	- rods
+	- green cons
+	- red cons
+	- red: green : blue <=> 40 : 20 : 1
+- fovea
+	- the yellow spot
+	- part of retina with highest concentration of photosensitive cells
+	- only place, where humans really perceive substantial colour stimuli
+	- outside fovea, most of cons are of the blue type
+- stimuli
+	- the intensity of nerural stimuli depends on intensity of light and 
+	on the sensitivity of the cell to the given frequency
+	- e.g. blue con sends same signal for weak blue light and strong red light
+- dark adaptation
+	- rods react slower, are capable to handle lower light intensity
+	- cons react faster, have higher treshold
+- retinal blood vessels
+	- structure of vessels is specific for every person
+	-> use in biometry
+- neural processing in retina
+	- in retina following preprocessing is made
+		- edge enhancement
+		- colour separation
+		- signals from rods and cons are separated
+- ganglion receptive field
+	- receptors grouped together to provide edge detection
+	- explanation for Hermann grid
+- visual acucity
+	- depends on absolute intensity of iluminaton
+	- rods are better in low light, with more light cons are better
+- colour constancy
+	- perceived colour is not much dependent on the colour of iluminant
+
+Metamerism
+- two stimuli are in colour match if the amount of R,G,B is the same through the whole spectrum
+- this can lead to two "same" stimuli with completely different spectral distributions
+- occurs frequently in real life
+- interesting problem in printing industry, in monitors etc.
+- two stimuli are metameric if they match in colour but have different spectral distribution
+	-> sensorically indistinguishable
+- metameric failure
+	- if metameric stimuly stop matching because of change of observer or lightsource
+- colour rendering index (CRI)
+	- used for measuring of metamerism
+	- colours are compared (in CIE) under standardised and measured iluminant
+	- not aplicable for colourful light
+	- includes white adaptation
+	- sample colours taken from original Munsell book of colour
+		- no longer physically available
+		-> nowadays Munsell includes only metamers
+- metameric failure
+	- sample / iluminant
+		- same object looks different under different iluminants
+	- observer
+		- things looking alike doesn't look alike for others
+		- e.g. monitors, cameras, other species
+	- geometrical 
+		- same object looks different from different angles
+- test image - metacow
+	- many cows with halves with different reflectance spectrums
+	- for humans look alike
+
+Colour blidness
+- much more common by males (the red-green version)
+- also called daltonism
+- protanopia - absence of red pigment
+- deuteropia - absence of green pigment
+- tritanope - blue-yellow blindness, quite rare
+	- equally distributed between men and woman
+- complete colour blindness is very rare
+- special pictures are used to detect it
+- there are also some differences in absorbtion characteristics between humans
+
+Anomaloscope
+- person is asked to mix RGB lights to match given colour
+
+Alien vision
+- many technologies allow us to "see" outside the normal visible frequencies
+- medium and long wave IR cameras
+	- have metal lens opaque to visible light
+- milimetre wave imaging
+	- recent technology
+	- still problems with resolution and frame rate
+	- emitted by human skin
+	- passive, not harmful
+	- can go through fog and cloths
+		- usage in security scanning
+- X-ray backscatter
+	- penetrates all closings and cover
+	- not harmful
+	- still controversial
+Optical illusions
+- anomalous movement
+	- caused by
+		- involuntary eye movements
+		- hardwired edge and movement detection in retina
+
+

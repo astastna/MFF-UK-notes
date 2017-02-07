@@ -1,0 +1,1025 @@
+Human eye
+- simple structure
+- reverted image is projected on the retina
+- chromatic abberation 
+	- because of different wave length, the colors detected on retina are shifted
+	- that means that red version of the image is shifted to different place than the blue 
+	version of the image
+- there is powerfull image preprocessing in the retina
+	- there is ~150x more information from the photosensitive cells than the nerves can
+	transfer to the brain
+	- the preprocessing is very similar to edge-detecting algorithms in computer graphics
+	- there are two kinds of cells in retina 
+		- center
+		- off center
+	- the cells behave like the edge detection matrix 
+		- in the middle they magnify the signal (positive number)
+		- on the border of the cell they lower the signal (negative number)
+	- the main difference is that in computer the process is made sequentely, whereas in the eye
+	all possible positions of the matrix are counted in parallel
+
+- post-processing
+	- luminance = G + R
+	- red-green = G - R
+	- blue-yellow = B - (G + R) <=> B - luminance
+
+Definition of color
+- color describes at least 3 things
+	- property of an object
+	- characteristic of light rays
+	- human sensation 
+- because it depends on processing in human brain, it is very hard to have an exact definition
+
+- who is interested
+	- artists
+	- physicists, chemists
+	- neurologists
+	- computer scientists
+	- philosophers
+	- etc.
+
+History
+- antics
+	- part of natural phylosophy
+	- linear colour models
+	- Arisotle
+		- colours mixture of white and black
+		- linear scale according to perceived brightness
+		- partly gained from observations of the sky
+		- red in the middle between black and white
+
+- middle ages
+	- variations of linear colour ordering systems
+	- problems of linear colour ordering systems
+		- ordering of colours according to luminance
+		- predictions on colour mixing not always right
+		- no prospect of additive / subtractive colours
+		- places black and white on the same level as colour hues
+	- Grosseteste (1230) - improvement of the linear colour system
+		- first separation of chroma from hue
+- renaissance and later
+	- 2- and 3-D colour spaces with the development of natural sciences
+	- Alberti (1435) - 3D colour space
+	- Leonardo (1510)- 4 primaries
+		- is white a proper colour? 
+		- is green primary?
+	- Newton (1672) - first to take the correct conclusions
+		- learned from the fact that white light can be broken to the colours of 
+		the rainbow by a prism
+		- proved that light is a heterogenous mixture of colours
+		- first colour circle
+	- J.H. Lambert (1760)
+		- tried to describe all colours as a mixture of blue, red and yellow
+		- effectively precursor of CMY models
+		- not universal colour model - not all colours can be gained through this model
+	- Harris (1776) - made colour circles popular
+		- only 2D models
+	- Goethe (1800) - wrote a lot about colour and thought it to be the main accomplishments
+		in his life
+		- developed theory which seemed to contradict Newton
+		- nowadays the two theories are seemed to describe the same things from different 
+		perspective
+		- studied colours on the edges 
+		- ( colours perceived only on the edges light-dark)
+	- Otto Runge (1810) - colour sphere
+
+Physics
+- light 
+	- electro-magnetic radiation
+	- important is the frequency
+	- ray of light contanis many arrays with different frequencies
+- spectrum 
+	- distibution of wavelength intensities per wavelength
+- particle / wave
+	- lightwaves (usually) behave according to laws of geometric optics
+	- diffraction and non-linear optics can be archieved only by wave interpretation
+- polarization
+	- light is a transverzal wave
+	- frequency doesn't give full information about the 2D wave in 3D space
+	- polarization is how the plane of the wave is inlined in comparison with xy-plane
+	- it is called phase inforation
+	- rays with different frequency and different polarization have the same colour, but 
+	interact with the matter differently, i.e. difference in reflection, refaction, etc.
+	- Heidinger's brush
+		- people are able to see the polarization of light
+		- it is ornament of yellow and blue thick lines perpendicular to each other
+		- the rotation is dependent on the polarization of light
+		- can be observed on the sky while having sun behind your back or on white place of 
+		an LCD monitor
+
+	- insects 
+		- many insects can see polarization of light
+		- they are able to have a good orientation thanks to this efect
+
+- LASER
+	- Light Amplification by Stimulated Emission of Radiation
+	- all photons are in phase and usually in frequency too
+	- producest coherent light
+	- propagates in almost perfectly straight line
+
+- colour of light
+	- when perceiving the emitter directly, only it's characteristics have to be taken into account
+	- otherwise the interaction of light with other objects plays significant role
+
+- energy levels
+	- each ligth frequency has it's energy level
+
+- visible range
+	- the visible range for humans (and more generally by any organic senzor) is given by the 
+	minimum and maximum energy levels
+	- too high energy levels destroy molecules (UV)
+	- too low energy levels are hard to detect and focus on (IR)
+
+- quantum properties of matter
+	- only certain discrete states and transitions between them are allowed
+	- these states correspond to energy levels and frequencies
+	
+15 causes of colour
+- 1-3 simple exitations and vibrations
+- 4,5 transitions involving ligand field effect
+- 6,7 transition between molecular orbitals
+- 8-11 transitions involving energy bonds
+- 12-15 geometry and physical optics
+
+- 1,2 and 11 are self luminous
+
+- 1 colour from incadescence
+	- blackbody radiation
+		- all matter, regardless of composition, emits light of certain frequencies by given
+		temperature
+		- infrared - below 800 K 
+		- red - Draper point, 800 K
+		- white - extremely hot iron
+		- blue - plasma in hot stars, 20 000 K
+	- Fraunhofer lines
+		- when studying the light from the Sun, scientists discovered that there are 
+		some frequencies with much less intensities than would be expected 
+		- it turned out that some light frequencies are partly absorbed by the atmosphere
+		of the Sun
+- 2 gass excitation
+	- sodium lamps has double emission line
+	- Stark shift
+		- shifting and splitting of spectral lines thanks to molecule being influenced by 
+		electric field
+		- with magnetic field it works similarly and is called Zeeman effect
+		- can be explained by quantum mechanics
+- 3 colour from vibrations and exitation
+	- e.g. reason for water being light blue
+	- it absorbs light from outside and then emits it as light blue light
+
+- 11 band gap emission
+	- LED
+		- semiconductor diodes where the transition from one semiconductor to another
+		causes certain decrease in energy level for electrons going through the interface
+		- the energy is emitted as light
+		- emitted energy is exactly one value for given LED
+		-> the resulting light is monochromatic
+		--> in order to have more "natural" light, more LEDs have to be combined 
+		
+		- it is hard to design and build, because the emission takes place in an opaque material
+		- more energy efficient
+		-> are expected to be used more often in the future
+
+- 4 colour from transition metal compounds
+	- colour of many minerals and paint pigments
+- 5 colour from transition metal impurities
+	- occurs in otherwise uncolourful rocks
+	- for example ruby, emerald
+	- atoms and molecules with electron pairs are hard to excite
+	- the amount of energy needed for excitation can be influenced by nearby molecules
+	- pure corund (Al2O3) is colorless, 1% of chrome make it ruby
+	- ruby is corund based and emerald beryillium base, both get coloured by 1% chrome
+	- alexandrite
+		- lattice between ruby and emerald
+		- green on daylight, red under incadescent ilumination (i.e. blackbody radiation)
+	- pleochroism
+		- some crystals change their colour according to the viewers point
+		- possible only in crystals with multiple axis
+		- special form of ligand field effects
+		- depends on the orientation of crystal lattice
+ 
+	
+- 6 colour in organic compounds
+	- some organic compounds contain electrons suitable for absorbtion in visible spectrum
+	- e.g. organic dyes
+		- fluorescence quite common
+		- usually contain structures similar to nucleus of benzene
+	- organic molecule reflectence
+		- smooth reflectance spectra
+		- easy to measure and represent in rendering
+
+Fluorescence
+	- re-radiation of energy on different wavelengths
+	- quite common, hard to measure
+		- need bi-spectral photometers
+	- Stokes shift
+		- fluorescence for light
+	- mostly the fluorescence is at lower energy levels
+	- there is transfer of energy
+		- at some point the item reflects more energy, than currently absorbs
+	
+	- bi-colured reflection
+		- some light is reflected, some gets inside and undergoes wavelength shift on the 
+		colorant molecules
+		
+- 7 colour from charge transfer 
+	- saphire 
+		- corund with 1% of iron - colourless
+		- corund with 1% of titan - pale yellow
+		- corund with 1% of both - deep blue
+		-> there is charge transfer between Ti(4+) and Fe(2+)
+	-  
+
+- 8 metals, alloys
+	- copper, silver, gold
+	- in normal molecules, there are single electrons with well-defined energy levels
+	- in metals, there are lots of electrons with so many energy levels, that it can be viewed as 
+	continuous
+	- light can penetrate at most  ~100 atoms deep
+	- then it is immediately absorbed
+	- efficiency of this process can be wavelength dependent
+		- higher energies are less efficient for some materials (copper, gold)
+	- direct absorbtion is hard to observe
+		- exeption: gold plated sunglasses	
+
+- 9 pure semiconductors
+	- silicon, pure diamond, cadmium yellow
+	- there is a gap between the conductive and valence band
+	-> photons of certain energy aren't absorbed
+	- the gap differs for different matters
+
+- 10 doped semiconductors
+	- coloured diamonds, LED's
+	- the additional atoms/molecules add intermediate levels to the energy gap
+
+- 11 colour centres
+	- smoky quartz, amethyst
+	- the impurities change the number of electrons locally
+	- these places can absorb light on some energy levels
+
+- 12 dispersion
+	- rainbows
+	- wavelength depends lineary on interference and non-lineary on refraction
+	- Sellmeier coefficients describe behaviour of glass and crystals
+		- approximations of the dispersion curves
+		- sum of quadratic terms with empirical coefficients
+		- alternative: Cauchy's formula
+	- dispersion sampling, two ways
+		- single wavelength in a path tracer
+		- trace normaly and add some random jitter to prevent from aliasing effects
+	- index of refraction (IOR) depends on wavelength
+	- light is split into its spectral elements
+	- normal dispersion
+		- rainbow
+		- index of refraction decreases with wavelength
+	- anomalous dispersion
+		- index of refraction behaves non-lineary
+		- partially reversed prismatic colours
+	- dependency with absorbtion
+		- IOR and absorbtion influence each other
+		- there are Kramers-Kronig relations to calculate one from the other
+		- anomalous dispersion occurs around absorbtion frequencies
+	- extinction coefficient - how much something absorbs light (per mass or number of molecules)
+	- experiment
+		- take three solutions with different concetration of some special chemical
+		- compare with prisms
+		-> extinction coefficient doesn't influence IOR
+	- rendering
+		- for some materials, anomalous dispersion cannot be neglected 
+
+- 13 scattering
+	- blue of the sky
+	= deflecting the direction of light in transparent environment
+	- the air deflects rays of light
+	- isn't dependent on aerosols in the air - it makes even the pure air
+	- wavelength dependency - reason for blue sky and red sunsets
+
+- 14 interference
+	- butterfly wings
+	- tiny structures can change the way the material looks like
+	- small differences in the propagation of light can lead to cancellation or reinforcement
+	- metallic and pearlescent colours
+		- goniochromism - colour changes with viewing angle
+		- micro and macro appearance differs
+	- structural colour
+		- extermely intense colours
+		- highly resistent to UV
+		- mechanically vulnerable
+		- practically always change hue with viewing angle
+	- pigment colour
+		- doesn't change colour
+		- less intense
+		- tends to fade out with time (destroyed by UV)
+		- 
+	
+- 15 difraction
+	- opal, diffraction gratings
+ 
+Solid colours vs. light
+- in CIE Lab, L = 100 is white (<=> "light")
+
+Band pass vs. band gap
+- monochromatic colour
+	- spectrum shows only narrow band in which the right colour goes
+	- almost black
+- band gap colours
+	- caused by narrow gap in the band
+	- almost white
+	- spectrum shows everything but a small gap
+- highly colourful paints have to be full colours or semichromes
+- full colours have maximum colour content for given hue
+- band limits have to be at complementary wavelengths
+
+Human visual system
+- main organ - eyes
+- vision cca 80% of all human perception
+- postprocessing is needed in order to get some insight
+- not all of the processes in visual perception are understood
+	- luckily, the exterior ones, which are mainly important for colour science, are good-known
+	- exterior = processing
+- visual cortex
+	- part of brain responsible for vision
+	- at the back of the head
+	- optical nerves cross each other
+	- something happens also in the inner part of the brain (as the signals go through it), but
+	it is not well understood
+	
+
+Human eye
+- the reversed image is projected on the retina
+- chromatic aberation 
+	- e.g. red version of the image is shifted differently than blue, green, etc.
+- retina
+	- some preprocessing needed here
+	- there are photosensitive cells
+		- rods
+			- cannot detect colour
+			- almost in all parts of retina but fovea
+			- responsible for night and low- light vision
+			- achromatic vision
+			- react slower to the light, the signal lasts longer time
+			- has photosensitive pigment rhodopsin inside
+			- it is called purple vision - absorbs yellow/green, transmits purple
+		- cons
+			- 3 kinds - red, green, blue
+			- mainly in fovea
+			- responsible for colur vision
+			- react quickly, the signal is short, fire 4x faster than rods
+	- the cells have light sensitive tips
+	- can register single photons
+	- there are also nerves and blood vessels around the photosenitive cells
+	- all four types of photosensitive cells have it's own photopigment
+		- based on a chromoforic grup
+		- connected to the opsin protein
+- bleaching
+	- electrochemical reaction, which converts incident photons to nerve stimuli
+- receptor absorbance
+	- blue cons
+	- rods
+	- green cons
+	- red cons
+	- red: green : blue <=> 40 : 20 : 1
+- fovea
+	- the yellow spot
+	- part of retina with highest concentration of photosensitive cells
+	- only place, where humans really perceive substantial colour stimuli
+	- outside fovea, most of cons are of the blue type
+- stimuli
+	- the intensity of nerural stimuli depends on intensity of light and 
+	on the sensitivity of the cell to the given frequency
+	- e.g. blue con sends same signal for weak blue light and strong red light
+- dark adaptation
+	- rods react slower, are capable to handle lower light intensity
+	- cons react faster, have higher treshold
+- retinal blood vessels
+	- structure of vessels is specific for every person
+	-> use in biometry
+- neural processing in retina
+	- in retina following preprocessing is made
+		- edge enhancement
+		- colour separation
+		- signals from rods and cons are separated
+- ganglion receptive field
+	- receptors grouped together to provide edge detection
+	- explanation for Hermann grid
+- visual acucity
+	- depends on absolute intensity of iluminaton
+	- rods are better in low light, with more light cons are better
+- colour constancy
+	- perceived colour is not much dependent on the colour of iluminant
+
+Metamerism
+- two stimuli are in colour match if the amount of R,G,B is the same through the whole spectrum
+- this can lead to two "same" stimuli with completely different spectral distributions
+- occurs frequently in real life
+- interesting problem in printing industry, in monitors etc.
+- two stimuli are metameric if they match in colour but have different spectral distribution
+	-> sensorically indistinguishable
+- metameric failure
+	- if metameric stimuly stop matching because of change of observer or lightsource
+- colour rendering index (CRI)
+	- used for measuring of metamerism
+	- colours are compared (in CIE) under standardised and measured iluminant
+	- not aplicable for colourful light
+	- includes white adaptation
+	- sample colours taken from original Munsell book of colour
+		- no longer physically available
+		-> nowadays Munsell includes only metamers
+- metameric failure
+	- sample / iluminant
+		- same object looks different under different iluminants
+	- observer
+		- things looking alike doesn't look alike for others
+		- e.g. monitors, cameras, other species
+	- geometrical 
+		- same object looks different from different angles
+- test image - metacow
+	- many cows with halves with different reflectance spectrums
+	- for humans look alike
+
+Colour blidness
+- much more common by males (the red-green version)
+- also called daltonism
+- protanopia - absence of red pigment
+- deuteropia - absence of green pigment
+- tritanope - blue-yellow blindness, quite rare
+	- equally distributed between men and woman
+- complete colour blindness is very rare
+- special pictures are used to detect it
+- there are also some differences in absorbtion characteristics between humans
+
+Anomaloscope
+- person is asked to mix RGB lights to match given colour
+
+Alien vision
+- many technologies allow us to "see" outside the normal visible frequencies
+- medium and long wave IR cameras
+	- have metal lens opaque to visible light
+- milimetre wave imaging
+	- recent technology
+	- still problems with resolution and frame rate
+	- emitted by human skin
+	- passive, not harmful
+	- can go through fog and cloths
+		- usage in security scanning
+- X-ray backscatter
+	- penetrates all closings and cover
+	- not harmful
+	- still controversial
+Optical illusions
+- anomalous movement
+	- caused by
+		- involuntary eye movements
+		- hardwired edge and movement detection in retina
+
+
+Colorimetry
+- goal to represent colour in a way which is 
+	- reproducible
+	- expressive
+	- meaningful
+	- consistent
+- branch of science 
+- is concerned in numeric representations of given visual stimuli
+	- stimuli with same specification look alike in same viewing conditions
+	- stimuli which look alike have the same representation
+	- numbers are continuous functions of physical parameters
+CIE
+- Commision International of l'Eclairage
+- international standards body of human perception and colours
+- CIE colorimetric system - base for other systems
+- Base Colorimetry Terms (BCT)
+
+CME principle
+- it is possible to represent all colours with 3 representants
+- but not single 3 ones
+-> reason why negative red is needed
+
+Maxwell matching
+- two primaries and measured light are compared to white
+- more accurate near predefined white
+
+Maximum saturation matching
+
+Colour matching
+- several laws
+	- symmetry
+	- transitivity (sometimes problematic in reality)
+	- additivity
+	- proportionality (still matches after scaling)
+- is equivalence, because reflexivity holds of course too
+
+
+
+- sometimes we need the distance between colors
+- for example order of some product, +- distance ?
+- circle around x,y
+
+- MacAdams's Ellipses
+- not circles, ellipses
+- we are sensitive in the lower part of the x,y,z digagram
+
+- different people see different ellipses, also the same person in different time has diffrent results
+
+- 1960 - people are trying to stretch the diagram to make the ellipses circles
+- partially successful
+- it is important to understand that this is a 3D problem, as luminiscence is also non-linear
+
+- 1976 - scientists asking people from movie and printing industry
+- film industry quite ... with CIE 1960 -> L*u*v
+	- has maximum
+	- the color is dependent on the maximum light in your scene
+	- incadescent ilumination	
+		- color of light
+		- we can normalize it quite quickly in our brain
+		- we can stab to the colour of our light
+	- the cut through the central part is also not linear (ellipses instead of circles)
+	- not much in use
+- designers wanted something, where coordinates made sense -> L*a*b
+	- a b are axes
+	- a is red-green, b is yellow-blue
+	- in photography, we change b to balance the white
+	- 
+- in both systems hue can be expressed through angle and luminiscence through the distance from center
+- we can also count hue difference (for a designer, the distance in luminiscence is not so bad as in hue)
+
+- LCH - Lab in radial coordinates
+- CIE 94 - computing the difference in LCH space with correction coeficients (domain specific)
+	- to make it most linear for different domains
+- CIEDE200 - adding another part to the difference equation 
+	- RT - blue rotation
+	- quite complicated
+	- implementation can be downloaded
+	- always check your implementation with the sample one
+
+- there is no colour space perfect for every task
+
+- CIELAB - not perceptually uniform
+	- some corrections in the way of counting the difference
+
+Beyond colour spaces
+- device colour spaces (RGB, CMYK)
+- colour metric spaces (Lab, Luv)
+	- roots in colorimetry, to measure values and differences
+- colour ordering spaces (munsell, coloroid)
+	- to find colour of some property
+
+- people are trying to make color samples
+
+Colour collections
+- primary aim to provide a list of numbered sample colours
+- no ordering - not a color space
+- usually some order
+- used in product specifications
+- physical samples provided usually, matching is done against them
+
+RAL-Farben
+- RAL classic - box of colours 
+	- RAL 4010 for example
+	- loose standard, guide
+	- how much does my colour differ from the sample is between me and customer
+	- no sorting
+	- delta i - under 1 not perceptable, over two perceptable, over 5 huge difference
+
+FS 595
+	- five digit numbers
+	- enumeration of colours for U.S. military purposes
+
+Pantone
+	- enumeration of colours and a specification of how to get them
+	- one can get certified colorants and then he can get certified colors through the receipts
+	- only some of it can be obtained by the standard CMYK
+
+
+- people compare colours on day light
+-> there are boxes which can simulate the standardised light conditions
+
+Colour ordering systems
+- Absolute COS
+	- RAL Design, Munsell 
+	- each entry associated with unique colours
+
+- Relative COS
+	- HSV, HLS
+	- front-ends to colour spaces
+	- HSV coordinates are not unique
+
+TV colour spaces
+- NTSC - backword compatible solution
+- YIQ
+- YuV
+- YCbCr
+- luminance abbreviated as Y
+- 
+Colour Collections
+	Pantone
+	
+Colour Ordering System Sub-Types
+Absolute
+	- pick a colour with given number
+	- 
+Relative
+	- 
+
+Munsell COS
+- Hue
+	- 5 basic colors + 5 between + 0 - 9 scale between them
+		-> 5 is exactly between 2 colors
+- Value
+	- 1-10
+	- 
+- Color space 
+	- non-linear because of perceptual reasons
+
+Natural Color System
+- swedish, good designers
+- standard for interior design
+- mainly color appearence
+
+- Hue
+	- 6 basic colors (without purple)
+	- black chromaticness Y90R
+	- Primalex uses NCS
+		- many builders use NCS
+	
+RAL design
+- small atlas
+- they took care to make the colors easily manufacturable
+
+
+Beamers
+- 3D movies - the beamer can't be brighter because of physical limits
+		- screen big and glasses filter another part of the light 
+		- too much heat from light
+
+- laser beamers
+	- really beatyful colours
+	- we don't waste any light on filtering
+	
+	- small ones
+		- red and blue lasers are common
+		- green laser have been created only recently
+		- in this boxes they use native green diodes
+		
+- the whole movie industry moved to much larger color space lately
+	- anticipation of better technology?
+
+Reproduction
+- photographic film
+	- only really durable
+	- high contrast, good color gamut
+- Russia, 1910
+	- take 3 photographs with red, green and blue filters
+	- then colored the negatives and gave it together
+	- no color degradation
+	- travelled around Russia
+		-> many colorful images of Russia from ~1910
+
+Printers
+- CMYK
+	- non-linear
+		- teoretically linear, but not in reality
+	- printable color space is smaller, than the one displayable
+	- in green and blue we can print what can't be displayed
+	-> solved by gamut mapping
+- Gamut mapping
+	- global
+		- trying to shrink all the points inside the printable area
+		- the difference between details stays the same
+	- local
+		- projection of the points outside of the colour space into it
+		- destroys the relation between neighbouring details
+		- (-8, 5, -10) the negative values can't be projected on 0, because that would change the hue
+		- actually we need to project the color in the direction to the white point
+			-> iterative methods
+Research
+- we usually don't see what has been done on the university
+	- great part of funding for postgraduate students
+- research takes a long time and is succesful only sometimes
+- 55 000 a month for carrier in these projects
+	- there exist a specific grant, which allow that
+	-> think about postgraduate studium
+
+Color reproduction
+- colors are non-linear - on different surfaces the amount of color reflected differs
+	- for example all red is reflected, but almost no green, etc.
+	- (the teacher uses ColorSync Utility - color space for different printers can be shown)
+	- the color space which can be shown on the monitor is different from the one which can be printed
+		- cyan, dark green, purple - monitors are bad at that colors
+		- on the other hand, printers can reproduce dark green quite well
+		- it is not easy to print a magazine ...
+		- what we see that bright green can be displayed but can't be printed 
+			-> we have to get this color inside the color space of the printer somehow
+			=> gamut mapping
+Gamut mapping
+- big gap between additive and subtractive methods
+- story - one of his students discovered that one specie doesn't fit into picture when photographed
+	-> trying to catch the real color of that animal, because it is very rare
+
+	- global
+		- we shift all colors to preserve the overall feeling from the picture
+		- one would say that this is best for the photographs, beause contrast stays the same
+		- however, nobody uses it in reality, because the colors are too pale then
+		- instead, some non-linear shrinking is used
+	- local 
+		- we only change the colors which are outside the given space
+
+Inkjets
+- color inkjets are becoming rare nowdays
+- big drawback - price of ink
+		- ink dries up
+- color quality is better then by laserjets
+- modern color printer has 6 or 7 types of ink
+	- dark and light cyan
+	- dark and light magenta
+	- yellow
+	- dark and light black
+
+- work well just on certain materials
+	- on photographic paper the pictures are better than on normal paper
+	- on the photographic paper has a small drains which make the ink to go deep and the resulting dots are smaller 
+
+- types of heads
+	- bubble head
+		- we have a small pipe with ink
+		- the end of the pipe is heated and a bubble of ink falls on the paper
+		- we try to get smallest dots possible
+		- ink requirements
+			- not too liquid, so paper is not too softened
+			- liquid enough to penetrate the paper
+			- non-toxic, non-flammable
+			- oh, wait, also colorful :D
+	- piezo heads
+		- only surviving to these days
+		- Epson
+		- print head is more expensive
+
+Laser printers
+	- fast
+	- low cost per page
+	- expensive
+	- reduced gamut
+	- not capable of any additional colours
+	- in most cases no laser inside these days
+	- basically computer controlled photocopier
+
+	- electrostatic printing
+		- invented in 1938 
+		- we charge part of the paper and make the toner parts get there
+		- it is possible to make it work also without computer
+		- old photocopies were made only through group of lenses which transported the reflected light to charge some parts of paper
+			-> reason for bad contrast of old copies
+		- nowdays everywhere is negative charge and the laser gets it away in some parts
+		- LED diods are often used instead of lasers because they work faster for wide printers 
+		- but their spectrum is not uniform
+	- toners
+		- small particles
+		- by inkjets, the ink physically over the paper
+		- toner is on the surface
+			-> reason for being waterproof
+	- how to get the right amount of toner on the page?
+		- brush - that wouldn't work after tousands of pages
+		-> tiny iron particles on an electromagnet, after print the stream gets away, it falls to a reservoir
+		- nowdays it is not needed any more, because the amount of toner pieces on the drum gets reduced to one layer by a shade
+	- the laser printers are quite small, because basically you need the paper to go through and get charged
+
+Offset printers
+	- first printers which were compatible with digitalisation
+		-> influenced the color representation in software
+	- durability, speed, cheap for large volumes
+		-> cheaper ink
+	- companies printing newspapers order inks by tons, not kilograms
+	- we have printing sheet from aluminium
+	- the sheet is rough and when we give water on it, it sticks (precisely)
+	- after the water, we put oily ink on the sheet and it sticks only to places where there's no water
+	- there is an offset cylinder, to which gets the ink and from which the paper gets coloured
+		- paper is soft and got squashed 
+		- discovered by accident - a rubber cylinder under the sheet
+			- one turn without paper
+			- the next paper got ink from both sides and one side has been sharper
+	- excellent gamut
+	- additional colours possible - gold, silver, etc.
+	- extreme speed
+	- not suitable for small series
+	- small offset printer - can be sutiable for tousands of pages
+
+	- newspaper print - they don't need to use heat, because the ink gets quicly into the paper
+	- magazines use different paper and heating is usually needed to get the ink into the paper
+		-> different machines are used for magazines and newspapers
+
+Pantone Hexachrome
+- pantone standard for printers
+- upper bound on what is possible to print
+- 
+
+Measurement technologies
+	- photometry - intensity
+		- basic unit - lumen
+		- sensitivity of average human observer
+		- spectrophotometry - doesn't make sense really, because we don't perceive the whole spectrum 
+	- colorimetry - color value measuments
+		- basically a single pixel camera
+		- same for decades, only getting more user friendly
+	- spectroradiometry - measuring the frequencies of the image
+		- radiometry - electromagnetic stuff
+		- spectroradiometry - electromagnetic radiation, with concern for human
+		- units - Joules, Watts 
+			- we measure energy per m^2, angle (and second) etc.
+			- the same units are for radiometry, but with different subscript
+				- tiny integral in definiton
+		- when taking some light
+			- radiometry counts everything under curve
+			- photometry gives bad coefficient for spectra, which aren't perceived much by human and 
+			a good coefficient to the important frequencies 
+				-> multiplying by a "gaussian peak" of human sensitivity 
+	
+Measurements
+- photometry, colorimetry - see previous lesson
+- calibration of brightness measurements
+	- could be done by different ways
+	- shining of black body
+		- around absolute zero
+		- but this temperature is quite hard to obtain
+	- reference lamps
+		- instead, we use the shining of gold by a given temperature
+		- gold is used because it doesn't oxidize
+		- for example iron creates a layer of oxids around it when getting to high temperature
+		-> gold is more accurate
+		- now special lamps are created using this principle
+		- burning time is limited
+	- exactly calibrated detector
+		- another possible way to do the calibration
+		- it is quite difficult to create it
+		- but by low temperatures it is possible and sometimes used
+	- surface with exact reflection
+		- used e.g. by photograpers, a table of appropriate material
+		- table has different shades of grey and some basic colours
+		-> photograph then can be normalized such that the colours the same as they really look like
+- monochromators
+	- devices which produce monochromatic light
+	- prism monochromator
+		- using two lens and a prism such that the wave length is normalized enough
+	- grating type monochromator
+		- it is possible to read a CD/DVD through it
+		- uses mirrors and a grading table
+		- light gets normalized through refraction
+	- spectro-radiometer 
+		- uses the principle of grating type monochromator
+		- has something more on the beginning and end
+	- filters
+		- usually too wide-band
+		- 
+	- lyot filters
+		- using liqid crystals
+		- many layers, each one frequency band
+	- lasers
+		- expensive
+		- inflexible - only one wave length
+- there is lamp measurement lab
+		- they measure characteristics of different tlamps
+		- in Prague
+		- 3D model of brightness
+- viewing booths
+	- special boxes with well-defined light environment
+	- companies use it to compare their products and check that the colour is the right one
+Digital printing
+- we have whole pipeline of devices - scanner, monitor, ink printer, offset printer
+	-> the goal is to make the picture seem the same on each of these devices
+- it is problematic, because e.g. monitor has additive colours, but ink printer is subtractive
+- solution:
+	- PCS - Profile Connection Space (CIELAB)
+		- colour space common for all devices
+		- input is not the problem - colour spaces of input devices have usually smaller colour spaces
+		- output is problem, because I have to know the parameters of output device and furthermore I go from larger space to smaller one
+		-> I have to solve what to do with colours outside the colour space
+			- there are more ways to do that as has been said during previous lessons
+- we have to calibrate the devices
+	- projector/monitor
+		- a camera and program with specified colours
+		- it measures the RGB curves and changes the input accordingly
+	- printer
+		- different printing technologies, papers, inks, ...
+		- the printers are not calibrated, but built to fit a certain standard
+			- Japanese standard
+			- American standard
+		- the data are in CMYK, it is better because the printers are calibrated to these pigments
+		- however, then they are limited to implicit gamut of industry standard CMYK printers
+		- L*a*b - perfect for this, but CMYK is still used
+		- literatura - Jan-Peter Hoffman - Digital colour management
+
+	- camera
+		- Apple is using a small colour space - Apple RGB, new iPhones have P3
+		- Adobe has a greater one
+		- if I have 8 bits per chanell - in jpg each colour has 8 bits and too wide colour space, I have to waste more space for colour representation
+		- PDF X	
+			- acronym for PDF Exchange
+		- HDR images
+			- OpenEXR - open source, BSD style license
+Printers
+- it is hard to calibrate them
+- if we wanted to do it the same as with monitors, we would need to print hundreads of pages
+- every printer uses different technology, different paper
+- the behaviour is non-linear
+- usually, colour wedges are printed
+	- they have linear scale whith different shades of black and other colours
+	- important is that every segment is different from the one next to him
+	- we can notice the rest of it e.g. on tetra pack 
+
+Paper Type characteristics
+	- tone value increase
+	- how much ink is soaked into the paper
+		- through TVI
+			- a raster with dots of different size is printed (dots are lineary greater and greater) 
+			- then the size of dots is measured
+			-> TVI curve - difference of reality and what has been printed
+		- is slightly non-linear to the amount of ink
+
+Video installations and virtual reality
+- on buildings etc.
+- an ability to light a beamer on a surface to make it white and without structure
+- then other colors and stuff can be added
+- not only colours, but space calibration
+- virtual reality has been used to find out how spiders get orientated in the space
+
+White Balance, Colour Appearance Transform (CAT)
+- colour constancy
+- chromatic adaptation - what our brain does
+- white balance - what we need the camera to do to make the colours see the same
+	- sometimes we don't want to do it - e.g. sunset looks horrible
+	- it's goal is to make the picture seem the same as it perceived the person how took it
+	- not only eyes compensate the picture in a way, but also brain
+	- even laptops have now the ability to adaptate the monitor to the intensity of light
+	
+- algorithms for white balance - determining iluminant
+	- white patch
+		- assumes that brightest pixel is white
+	- gray world
+		- assumes that on average there are all values from white to black
+		- basically getting the center of gravity to the middle
+		- doesn't work well with highly colourful scenes
+	- gamut constraint
+		- assumption is that the colour space of picture have the same shape as the one in reality
+	- robotics - make the robot to find a yellow ball
+		- it is really hard
+		- the RGB values can't be hard-coded
+   
+- algorithms for white balance - determining how would the picture look like with different illuminant
+	- matrix adaptation
+		- transformation matrix, source and destination white as input
+
+- people can tell apart white box in orange light and orange box in white light, which shouldn't be possible
+	- still not understood
+	- a colour scientist has a theory, that the direct ilumination is the same, but the indirect not
+		- indirect ilumination of white on orange gets more orange with every refraction
+		- indirect ilumination of orange on white doesn't change
+		
+
+Raytracing
+- counting where the ray coming into the eye has come from 
+
+CWNI - Colured World, Neutral Iluminants
+- uses raytracing, but without light source
+- then chroma of that is counted and subtracted from the original image
+	-> we get non-colurful stuff
+	- then we extract the colour of iluminant from that
+- used to do the correction
+White balance
+	- what we do in computer to correct colors
+Colour adaptation 
+	- what our brani and eyes do, so we perceive the colours of the objects the same
+	- no matter the light environment
+Hue
+- how differs the given light stimulus from red, green and blue
+
+Lightness
+- brightness relative to the brightness of white object perceived under the same conditions
+ brightness / brightness of white
+
+Brightness
+- amount of light
+
+Colorfulness
+- perceived quantity of hue content in a stimulus
+
+Saturation
+- colorfulness of object realtive to it's own brightness
+
+Chroma 
+- colourfulness of an object relatively to the brightness of white object under similar viewing conditions
+
+See presentation from Mr. Fairchild (from conference)
+
+How luminance impacts color?
+- high luminance display
+	- why TV's aren't high luminance? it would be easier than 3D, HDR, ...
+	-> colors behave differently
+- eye trackers
+	- if we know in which parts of the image people look the most
+	- we can render well only that part
+	- mostly not done because it is more problematic to measure it than to render it
+	- but can be used by interactive rate-racing
+
+- a whole technology can be built around color science
+
+- a lot of scientific work is about meeting people and exchanging ideas
+- interaction is needed 
